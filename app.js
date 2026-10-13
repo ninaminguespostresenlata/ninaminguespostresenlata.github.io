@@ -42,7 +42,13 @@
       normal += l.p.precio * l.cant;
     });
     const piezas = lineas.reduce((s, l) => s + l.cant, 0);
-    return { lineas, latas, evento, subtotal, ahorro: normal - subtotal, piezas };
+    // En eventos cada sabor necesita un mínimo de latas (receta completa)
+    const porSabor = {};
+    lineas.forEach(l => { if (l.p.latas === 1) porSabor[l.p.id] = (porSabor[l.p.id] || 0) + l.cant; });
+    const cortos = evento && N.minimoPorSaborEvento
+      ? Object.keys(porSabor).filter(id => porSabor[id] < N.minimoPorSaborEvento).map(id => productos[id].nombre)
+      : [];
+    return { lineas, latas, evento, subtotal, ahorro: normal - subtotal, piezas, cortos };
   }
 
   function fotoDe(p, opcion) {
@@ -78,6 +84,7 @@
   $("#tipo-evento").insertAdjacentHTML("beforeend", N.tiposDeEvento.map(t => `<option>${esc(t)}</option>`).join(""));
   $("#eventos-tipos").innerHTML = N.tiposDeEvento.filter(t => t !== "Otro").map(t => `<li>${esc(t)}</li>`).join("");
   $("#eventos-min").textContent = N.latasParaEvento;
+  $("#eventos-sabor").textContent = N.minimoPorSaborEvento;
   $("#eventos-dias").textContent = N.diasAnticipacionEvento;
   $("#link-evento").href = `https://wa.me/${N.whatsapp}?text=${encodeURIComponent(
     `¡Hola ${N.nombre}! Quiero cotizar latas para un evento 🎉\n\n` + N.cotizacionEvento.join("\n"))}`;
@@ -266,7 +273,9 @@
 
     const faltan = N.latasParaEvento - r.latas;
     $("#aviso-evento").innerHTML = !r.latas ? "" : r.evento
-      ? `🎉 <strong>¡Precio de evento aplicado!</strong> (${r.latas} latas). Los pedidos de evento se hacen con ${N.diasAnticipacionEvento} días de anticipación.`
+      ? (r.cortos.length
+        ? `⚠️ En pedidos de evento cada sabor lleva mínimo <strong>${N.minimoPorSaborEvento} latas</strong>. Sube a ${N.minimoPorSaborEvento}: ${r.cortos.map(esc).join(", ")}.`
+        : `🎉 <strong>¡Precio de evento aplicado!</strong> (${r.latas} latas). Los pedidos de evento se hacen con ${N.diasAnticipacionEvento} días de anticipación.`)
       : `Llevas <strong>${r.latas} latas</strong>. Con ${faltan} más obtienes el precio especial de eventos.`;
 
     $("#subtotal").textContent = dinero(r.subtotal);
@@ -355,6 +364,7 @@
 
   function validar(r, d) {
     if (!r.piezas) return "Agrega al menos un producto.";
+    if (r.cortos.length) return `En pedidos de evento cada sabor lleva mínimo ${N.minimoPorSaborEvento} latas. Sube a ${N.minimoPorSaborEvento}: ${r.cortos.join(", ")}.`;
     if (!d.nombre || !d.nombre.trim()) return "Escribe tu nombre.";
     if ((d.celular || "").replace(/\D/g, "").length < 10) return "Escribe tu celular a 10 dígitos.";
     if (!d.entrega) return "Elige si pasas a recoger o envío a domicilio.";

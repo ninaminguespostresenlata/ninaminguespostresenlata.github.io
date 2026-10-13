@@ -44,6 +44,7 @@ window.NEGOCIO = {
   // Reglas de pedido
   minimoLatas: 4,             // por sabor
   latasParaEvento: 15,        // a partir de aquí aplica el precio de eventos
+  minimoPorSaborEvento: 5,    // en eventos, mínimo de latas por sabor (receta completa)
   diasAnticipacion: 2,        // pedidos normales
   diasAnticipacionEvento: 5,  // pedidos de eventos (15+ latas)
   domingoSoloEventos: true,   // domingo cerrado, pero sí se entregan eventos
@@ -79,7 +80,7 @@ window.NEGOCIO = {
     "Precio por lata · 9 cm de alto y 250 ml (postres y bebidas)",
     "Pedido mínimo: 4 latas del mismo sabor",
     "Pedidos con 2 días de anticipación (eventos: 5 días, también en domingo)",
-    "Precio especial en pedidos de 15 latas o más",
+    "Precio especial en pedidos de 15 latas o más (mínimo 5 latas por sabor)",
     "50% de anticipo para apartar tu pedido",
     "El costo de envío depende de tu dirección",
     "Elaborado de forma artesanal con ingredientes de calidad",
