@@ -99,6 +99,7 @@ button, input, textarea { font: inherit; color: inherit; }
 .btn svg { width: 18px; height: 18px; fill: currentColor; }
 .btn--wa { background: var(--wa); color: #fff; }
 .btn--ig { background: var(--cafe); color: var(--rosa); }
+.btn--fb { background: #1877F2; color: #fff; }
 .btn--sec { background: transparent; color: var(--cafe-texto); border: 1px solid var(--rosa-medio); }
 .btn--enviar {
   width: 100%;

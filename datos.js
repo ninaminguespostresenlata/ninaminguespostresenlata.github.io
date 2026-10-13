@@ -35,6 +35,7 @@ window.NEGOCIO = {
   // WhatsApp: código de país (52 = México) + 10 dígitos, sin espacios ni signos.
   whatsapp: "523351447649",
   instagram: "ninaminguespostresenlata",
+  facebook: "ninaminguespostresenlata",
   ciudad: "Colima, México",
 
   moneda: "$",
