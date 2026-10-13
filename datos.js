@@ -91,6 +91,7 @@ window.NEGOCIO = {
     "Sabor de latas:",
     "¿Le gustaría sticker o diseño personalizado?:",
     "Lugar de entrega:",
+    "¿Montaje en mesa de postres o en hielera? (la hielera es renta con costo extra):",
   ],
 
   // Galería de eventos (fotos en img/eventos)
