@@ -19,7 +19,7 @@ Menú con fotos, carrito y pedido directo por WhatsApp.
 ## 1. Dónde está publicado
 
 El menú vive en este repositorio y se publica solo en:
-**https://ninaminguespostresenlata.github.io/**
+**https://ninamingues.com/**
 
 Cada cambio que se guarde aquí se publica en 1 o 2 minutos.
 
@@ -33,7 +33,7 @@ Cada cambio que se guarde aquí se publica en 1 o 2 minutos.
 
 - **Perfil:** WhatsApp Business → Herramientas para la empresa → Perfil de empresa → *Sitio web* → pega el link.
 - **Mensaje de bienvenida:** Herramientas → Mensaje de bienvenida, por ejemplo:
-  > ¡Hola! Gracias por escribir a Nina Míngues 💕 Mira nuestro menú y arma tu pedido aquí: https://ninaminguespostresenlata.github.io/
+  > ¡Hola! Gracias por escribir a Nina Míngues 💕 Mira nuestro menú y arma tu pedido aquí: https://ninamingues.com/
 - **Mensaje de ausencia:** igual, con el link, para cuando estés fuera de horario.
 - **Respuesta rápida:** crea `/menu` con el link para mandarlo con un toque.
 - **Estados:** comparte el link en tus estados. Se ve con foto gracias a la vista previa.
