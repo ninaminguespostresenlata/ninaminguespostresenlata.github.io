@@ -71,7 +71,7 @@
   $("#eslogan").textContent = N.eslogan;
   $("#link-wa").href = `https://wa.me/${N.whatsapp}?text=${encodeURIComponent(`¡Hola ${N.nombre}! Vi su menú y tengo una pregunta.`)}`;
   $("#link-ig").href = `https://instagram.com/${N.instagram}`;
-  $("#link-fb").href = `https://facebook.com/${N.facebook}`;
+  $("#link-fb").href = N.facebook;
   $("#ciudad").textContent = "📍 " + N.ciudad;
   $("#notas").innerHTML = N.notas.map(t => `<li>${esc(t)}</li>`).join("");
   $("#horario").innerHTML = N.horarioTexto.map(t => `<li>${esc(t)}</li>`).join("");
