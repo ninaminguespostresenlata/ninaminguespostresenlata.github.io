@@ -275,7 +275,7 @@ window.CATEGORIAS = [
     ],
   },
   {
-    nombre: "Pay y Cremosos",
+    nombre: "Pay & Cremosos",
     productos: [
       {
         id: "pay-nina",
