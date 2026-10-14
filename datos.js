@@ -182,8 +182,15 @@ window.CATEGORIAS = [
         id: "ferrero-nutella",
         nombre: "Ferrero & Nutella",
         descripcion: "Bizcocho de chocolate con Nutella y Ferrero en trozos.",
-        precio: 80, precioEvento: 75,
+        precio: 90, precioEvento: 85,
         foto: "img/productos/ferrero-nutella.jpg",
+        etiqueta: "Últimos días",
+      },
+      {
+        id: "chocolate-nutella",
+        nombre: "Chocolate & Nutella",
+        descripcion: "Bizcocho de chocolate relleno de Nutella con chantilly de chocolate.",
+        precio: 80, precioEvento: 75,
         etiqueta: "Nuevo",
       },
       {
