@@ -191,6 +191,7 @@ window.CATEGORIAS = [
         nombre: "Chocolate & Nutella",
         descripcion: "Bizcocho de chocolate relleno de Nutella con chantilly de chocolate.",
         precio: 80, precioEvento: 75,
+        foto: "img/productos/chocolate-nutella.jpg",
         etiqueta: "Nuevo",
       },
       {
