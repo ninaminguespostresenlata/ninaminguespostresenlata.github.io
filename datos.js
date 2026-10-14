@@ -126,7 +126,8 @@ window.NEGOCIO = {
     },
     {
       texto: "¡Delicioso! En serio, todo súper delicioso.",
-      nombre: "Moni",
+      nombre: "Mónica",
+      producto: "Doble Chocolate",
     },
     {
       texto: "Muy ricos, los recomendaría sin duda alguna.",
