@@ -7,7 +7,7 @@ Menú con fotos, carrito y pedido directo por WhatsApp.
 - Muestra todos los productos con foto, descripción, precio y etiquetas (¡Más vendido!, ¡Nuevo!).
 - El cliente agrega latas al carrito (mínimo 4 por sabor; los extras desde 1).
 - Con **15 latas o más** aplica solo el **precio de eventos** y muestra cuánto ahorra.
-- Pide **nombre, celular, recoger o domicilio, dirección, fecha y forma de pago**.
+- Pide **nombre, celular, punto de entrega o domicilio, dirección, fecha y forma de pago**.
 - La fecha respeta la anticipación (2 días, o 5 para eventos). Los domingos solo se aceptan pedidos de eventos.
 - El cliente puede indicar el tipo de evento (boda, bautizo, XV años, cumpleaños...).
 - Sección **Postres para tu evento** con botón para cotizar por WhatsApp.

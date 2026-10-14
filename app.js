@@ -370,7 +370,7 @@
     if (e.target.name === "entrega") {
       const dom = form.entrega.value === "Domicilio";
       $("#campo-direccion").hidden = !dom;
-      $("#envio-txt").textContent = dom ? "Se cotiza por WhatsApp según tu dirección" : "Sin costo (pasas a recoger)";
+      $("#envio-txt").textContent = dom ? "Se cotiza por WhatsApp según tu dirección" : "Sin costo · te compartimos el punto de encuentro por WhatsApp";
       actualizar();
     }
   });
@@ -398,7 +398,7 @@
       "*MIS DATOS*",
       `Nombre: ${d.nombre.trim()}`,
       `Celular: ${d.celular.trim()}`,
-      `Entrega: ${d.entrega === "Domicilio" ? "Envío a domicilio" : "Paso a recoger"}`,
+      `Entrega: ${d.entrega === "Domicilio" ? "Envío a domicilio" : "Punto de entrega (acordar lugar por WhatsApp)"}`,
       d.entrega === "Domicilio" ? `Dirección: ${d.direccion.trim()}` : null,
       d.evento ? `Evento: ${d.evento}` : null,
       `Fecha: ${fechaBonita(d.fecha)}`,
@@ -414,7 +414,7 @@
     if (r.cortos.length) return `En pedidos de evento cada sabor lleva mínimo ${N.minimoPorSaborEvento} latas. Sube a ${N.minimoPorSaborEvento}: ${r.cortos.join(", ")}.`;
     if (!d.nombre || !d.nombre.trim()) return "Escribe tu nombre.";
     if ((d.celular || "").replace(/\D/g, "").length < 10) return "Escribe tu celular a 10 dígitos.";
-    if (!d.entrega) return "Elige si pasas a recoger o envío a domicilio.";
+    if (!d.entrega) return "Elige punto de entrega o envío a domicilio.";
     if (d.entrega === "Domicilio" && !(d.direccion || "").trim()) return "Escribe la dirección de entrega.";
     if (!d.fecha) return "Elige la fecha de entrega.";
     if (d.fecha < fechaMinima(r.evento)) return `La primera fecha disponible es ${fechaBonita(fechaMinima(r.evento))}.`;
