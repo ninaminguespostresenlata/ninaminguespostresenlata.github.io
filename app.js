@@ -110,6 +110,15 @@
       <figcaption>— ${esc(t.nombre)}${t.producto ? ` · <span>${esc(t.producto)}</span>` : t.ocasion ? ` · <span>${esc(t.ocasion)}</span>` : ""}</figcaption>
     </figure>`).join("");
   $("#link-testimonios").href = `https://instagram.com/${N.instagram}`;
+  // Preguntas frecuentes
+  $("#lista-preguntas").innerHTML = (N.preguntas || []).map(q => `
+    <details class="faq__item">
+      <summary>${esc(q.pregunta)}</summary>
+      <p>${esc(q.respuesta)}</p>
+    </details>`).join("");
+  $("#preguntas").hidden = !(N.preguntas || []).length;
+  $("#link-faq").href = `https://wa.me/${N.whatsapp}?text=${encodeURIComponent(`¡Hola ${N.nombre}! Tengo una pregunta:`)}`;
+
   // La sección siempre se muestra para que el botón de opinión esté disponible
   $("#testimonios").hidden = false;
   $("#lista-testimonios").hidden = !(N.testimonios || []).length;
@@ -185,7 +194,8 @@
   const logoSinFoto = `<div class="tarjeta__sinfoto"><img src="img/logo.png" alt="" loading="lazy"></div>`;
 
   nav.innerHTML = CATS.map(c => `<a href="#${slug(c.nombre)}">${esc(c.nombre)}</a>`).join("") +
-    `<a href="#eventos">Eventos ✨</a>`;
+    `<a href="#eventos">Eventos ✨</a>` +
+    `<a href="#preguntas">Preguntas</a>`;
   menu.innerHTML = CATS.map(c => `
     <section class="seccion" id="${slug(c.nombre)}">
       <h2 class="titulo-script seccion__titulo">${esc(c.nombre)}</h2>

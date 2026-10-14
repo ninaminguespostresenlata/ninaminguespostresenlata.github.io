@@ -97,6 +97,59 @@ window.NEGOCIO = {
     "¿Montaje en mesa de postres o en hielera? (la hielera es renta con costo extra):",
   ],
 
+  // Preguntas frecuentes (aparecen en la sección "Preguntas frecuentes").
+  // Para agregar una: copia un bloque { pregunta: "...", respuesta: "..." }.
+  preguntas: [
+    {
+      pregunta: "¿Cuánto dura mi postre?",
+      respuesta: "Hasta 7 días en refrigerador sin abrir. Una vez abierta la lata, hasta 2 días en refrigerador con la tapa sobrepuesta.",
+    },
+    {
+      pregunta: "¿Cambia el sabor con los días?",
+      respuesta: "El sabor casi no cambia, pero con los días el bizcocho va perdiendo humedad. Para disfrutar esa textura húmeda que nos encanta, te recomendamos comerlo en los primeros días.",
+    },
+    {
+      pregunta: "¿Cuánto tiempo aguanta fuera del refrigerador?",
+      respuesta: "Máximo 4 horas. Para eventos al aire libre te recomendamos montarlo en hielera con mucho hielo.",
+    },
+    {
+      pregunta: "¿Se puede congelar?",
+      respuesta: "No lo recomendamos: la crema y el pan cambian de textura, y el material de la lata no es apto para congelar.",
+    },
+    {
+      pregunta: "¿Qué alérgenos contienen?",
+      respuesta: "Todos nuestros postres llevan lácteos, huevo y gluten. El Ferrero & Nutella y el Chocolate & Nutella llevan avellana. Todos pueden contener trazas de cacahuate y nuez.",
+    },
+    {
+      pregunta: "¿Tienen opciones sin azúcar, sin gluten o veganas?",
+      respuesta: "Por ahora solo nuestro Latte Helado sin azúcar añadida. ¡Estamos trabajando en más opciones muy pronto!",
+    },
+    {
+      pregunta: "¿Puedo cambiar o cancelar mi pedido?",
+      respuesta: "Una vez confirmado, el pedido ya no tiene cambios. En pedidos de evento puedes cancelar o hacer cambios hasta 4 días antes de la entrega. En todos los casos el anticipo no es reembolsable, porque con él compramos los ingredientes de tu pedido.",
+    },
+    {
+      pregunta: "¿Hasta dónde entregan?",
+      respuesta: "Hacemos envíos en Colima, Villa de Álvarez y Comala (el costo depende de tu dirección). Si eliges punto de entrega, nos vemos en Walmart Tercer Anillo o en el Oxxo pasando la glorieta de Los Perritos.",
+    },
+    {
+      pregunta: "¿Tienen local o punto de venta?",
+      respuesta: "Por el momento no. Todos los pedidos se hacen por WhatsApp desde este menú.",
+    },
+    {
+      pregunta: "¿Los pedidos para eventos incluyen decoración?",
+      respuesta: "No incluyen decoración. Los stickers personalizados con nombre, fecha o mensaje tienen un costo adicional.",
+    },
+    {
+      pregunta: "¿Incluyen cucharas y servilletas?",
+      respuesta: "No, los desechables no están incluidos.",
+    },
+    {
+      pregunta: "¿La lata es reciclable?",
+      respuesta: "¡Sí! Y además la puedes reutilizar como maceta para plantas pequeñas 🌱",
+    },
+  ],
+
   // Galería de eventos (fotos en img/eventos)
   // Testimonios de clientes (sin fotos). "producto", "ocasion" y "estrellas" (1 a 5,
   // si no se pone son 5) son opcionales. Las opiniones nuevas llegan por WhatsApp desde

@@ -70,3 +70,13 @@ Desde la página de GitHub puedes editar `datos.js` (ícono del lápiz) y subir 
     estrellas: 5,
   },
   ```
+
+## 6. Preguntas frecuentes
+
+Están en `datos.js`, en `preguntas`. Para agregar o cambiar una, edita o copia un bloque:
+```
+{
+  pregunta: "¿...?",
+  respuesta: "...",
+},
+```
