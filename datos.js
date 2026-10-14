@@ -129,7 +129,7 @@ window.NEGOCIO = {
     },
     {
       texto: "Muy ricos, los recomendaría sin duda alguna.",
-      nombre: "Clienta de Colima",
+      nombre: "María",
     },
   ],
 
