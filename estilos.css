@@ -685,8 +685,8 @@ button, input, textarea { font: inherit; color: inherit; }
 .visor p { margin: 0; color: #fff; text-align: center; }
 .visor__cerrar { position: absolute; top: 16px; right: 16px; }
 
-.eventos__foto { object-position: left 20%; }
-@media (max-width: 759px) { .eventos__foto { height: 380px; } }
+.eventos__foto { object-position: center 45%; }
+@media (max-width: 759px) { .eventos__foto { height: 420px; } }
 
 /* Rochester es más fina: un poco más grande para que luzca */
 .seccion__titulo { font-size: clamp(2.3rem, 7.5vw, 3rem); }
