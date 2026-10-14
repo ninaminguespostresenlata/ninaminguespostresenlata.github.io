@@ -348,13 +348,24 @@ button, input, textarea { font: inherit; color: inherit; }
   animation: subir .3s ease;
 }
 .carrito-btn strong { margin-left: auto; font-size: 1.1rem; color: #fff; }
-.carrito-btn__cant {
-  min-width: 36px; height: 36px;
+.carrito-btn__icono {
+  position: relative;
+  width: 46px; height: 46px; flex: none;
   display: grid; place-items: center;
   border-radius: 50%;
+  background: rgba(248, 225, 231, .14);
+  color: var(--rosa);
+}
+.carrito-btn__icono svg { width: 28px; height: 28px; }
+.carrito-btn__cant {
+  position: absolute; top: -4px; right: -6px;
+  min-width: 22px; height: 22px; padding: 0 5px;
+  display: grid; place-items: center;
+  border-radius: 999px;
   background: var(--rosa);
   color: var(--cafe);
-  font-weight: 700;
+  font-size: .78rem; font-weight: 700;
+  border: 2px solid var(--cafe);
 }
 @keyframes subir { from { transform: translate(-50%, 40px); opacity: 0; } }
 
