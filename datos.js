@@ -237,7 +237,7 @@ window.CATEGORIAS = [
         id: "ferrero-nutella",
         nombre: "Ferrero & Nutella",
         descripcion: "Bizcocho de chocolate (tipo brownie) con Nutella y Ferrero en trozos.",
-        precio: 95, precioEvento: 90,
+        precio: 90, precioEvento: 85,
         foto: "img/productos/ferrero-nutella.jpg",
         etiqueta: "Agotado",
         agotado: true,
@@ -325,7 +325,7 @@ window.CATEGORIAS = [
         id: "revelacion",
         nombre: "Revelación de Género",
         descripcion: "Bizcocho con relleno sorpresa: ¡descubre si es niño o niña al abrirla!",
-        precio: 85, precioEvento: 80,
+        precio: 80, precioEvento: 75,
         opciones: ["Azul", "Rosa"],
         fotosOpcion: {
           Azul: "img/productos/revelacion-azul.jpg",
@@ -336,7 +336,7 @@ window.CATEGORIAS = [
         id: "baby-shower",
         nombre: "Baby Shower",
         descripcion: "Bizcocho con capas de color azul o rosa.",
-        precio: 85, precioEvento: 80,
+        precio: 80, precioEvento: 75,
         opciones: ["Azul", "Rosa"],
         fotosOpcion: {
           Azul: "img/productos/baby-shower-azul.jpg",
