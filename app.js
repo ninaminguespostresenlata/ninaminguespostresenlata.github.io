@@ -102,6 +102,16 @@
     $("#visor").hidden = false;
   });
   $("#visor").addEventListener("click", () => { $("#visor").hidden = true; });
+  // Testimonios
+  $("#lista-testimonios").innerHTML = (N.testimonios || []).map(t => `
+    <figure class="testimonio">
+      <div class="testimonio__estrellas" aria-label="5 estrellas">★★★★★</div>
+      <blockquote>“${esc(t.texto)}”</blockquote>
+      <figcaption>— ${esc(t.nombre)}${t.producto ? ` · <span>${esc(t.producto)}</span>` : t.ocasion ? ` · <span>${esc(t.ocasion)}</span>` : ""}</figcaption>
+    </figure>`).join("");
+  $("#link-testimonios").href = `https://instagram.com/${N.instagram}`;
+  $("#testimonios").hidden = !(N.testimonios || []).length;
+
   $("#pagos").insertAdjacentHTML("beforeend", N.formasDePago.map((f, i) =>
     `<label class="chip"><input type="radio" name="pago" value="${esc(f)}" ${i === 0 ? "required" : ""}> ${esc(f)}</label>`).join(""));
 

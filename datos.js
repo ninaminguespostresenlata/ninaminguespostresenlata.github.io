@@ -98,6 +98,41 @@ window.NEGOCIO = {
   ],
 
   // Galería de eventos (fotos en img/eventos)
+  // Testimonios de clientes (sin fotos). "producto" es opcional.
+  testimonios: [
+    {
+      texto: "Súper ricos, a los niños les encantaron. La verdad es una muy buena idea para fiestas en las escuelitas. A las maestras les encantó el concepto, ya que no se hace cochinero con los pastelitos.",
+      nombre: "Viviana",
+      ocasion: "Fiesta escolar",
+    },
+    {
+      texto: "Sí están buenos los postres, es una opción diferente para los invitados. Gracias por regalarnos la degustación.",
+      nombre: "Gris",
+      ocasion: "Degustación para eventos",
+    },
+    {
+      texto: "10000/10 💎 Ya me había dicho quien me lo recomendó que estaban muuuy buenos y no se equivocó.",
+      nombre: "César",
+    },
+    {
+      texto: "El de Ferrero, por cierto, ¡está SÚPER DELICIOSO! Me gustó mucho.",
+      nombre: "Karina",
+      producto: "Ferrero & Nutella",
+    },
+    {
+      texto: "Quedaron súper bellas, muy muy bonitas. Las abrimos para probarlas mis hijas y yo y son una súper mega delicia. El concepto súper padre, súper original, y sobre todo muy rico.",
+      nombre: "Paulina",
+    },
+    {
+      texto: "¡Delicioso! En serio, todo súper delicioso.",
+      nombre: "Moni",
+    },
+    {
+      texto: "Muy ricos, los recomendaría sin duda alguna.",
+      nombre: "Clienta de Colima",
+    },
+  ],
+
   galeriaEventos: [
     { foto: "img/eventos/boda-torre.jpg", texto: "Boda · torre de latas con etiqueta personalizada" },
     { foto: "img/eventos/boda-mesa.jpg", texto: "Boda · una lata en cada lugar" },
