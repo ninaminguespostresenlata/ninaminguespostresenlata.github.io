@@ -239,7 +239,8 @@ window.CATEGORIAS = [
         descripcion: "Bizcocho de chocolate (tipo brownie) con Nutella y Ferrero en trozos.",
         precio: 90, precioEvento: 85,
         foto: "img/productos/ferrero-nutella.jpg",
-        etiqueta: "Últimos días",
+        etiqueta: "Agotado",
+        agotado: true,
       },
       {
         id: "chocolate-nutella",
