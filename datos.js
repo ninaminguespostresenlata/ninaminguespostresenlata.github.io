@@ -236,7 +236,7 @@ window.CATEGORIAS = [
       {
         id: "ferrero-nutella",
         nombre: "Ferrero & Nutella",
-        descripcion: "Bizcocho de chocolate con Nutella y Ferrero en trozos.",
+        descripcion: "Bizcocho de chocolate (tipo brownie) con Nutella y Ferrero en trozos.",
         precio: 90, precioEvento: 85,
         foto: "img/productos/ferrero-nutella.jpg",
         etiqueta: "Últimos días",
@@ -244,7 +244,7 @@ window.CATEGORIAS = [
       {
         id: "chocolate-nutella",
         nombre: "Chocolate & Nutella",
-        descripcion: "Bizcocho de chocolate relleno de Nutella con chantilly de chocolate.",
+        descripcion: "Bizcocho de chocolate (tipo brownie) relleno de Nutella con chantilly de chocolate.",
         precio: 80, precioEvento: 75,
         foto: "img/productos/chocolate-nutella.jpg",
         etiqueta: "Nuevo",
