@@ -14,7 +14,7 @@
   --wa: #1FA855;
   --sombra: 0 6px 20px rgba(43, 26, 16, .10);
   --radio: 18px;
-  --script: "Kaushan Script", cursive;
+  --script: "Rochester", cursive;
   --sans: "Poppins", "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
   --condensada: "Barlow Condensed", "Arial Narrow", sans-serif;
 }
@@ -676,3 +676,10 @@ button, input, textarea { font: inherit; color: inherit; }
 
 .eventos__foto { object-position: left 20%; }
 @media (max-width: 759px) { .eventos__foto { height: 380px; } }
+
+/* Rochester es más fina: un poco más grande para que luzca */
+.seccion__titulo { font-size: clamp(2.3rem, 7.5vw, 3rem); }
+.eventos h2 { font-size: clamp(2.4rem, 8vw, 3.1rem); }
+.galeria__titulo { font-size: clamp(2.2rem, 7vw, 2.8rem); }
+.info h2, .panel__cab h2 { font-size: 2.4rem; }
+.reutiliza h2 { font-size: clamp(1.7rem, 6vw, 2.4rem); }
