@@ -723,3 +723,26 @@ button, input, textarea { font: inherit; color: inherit; }
 .testimonio figcaption { font-weight: 600; color: var(--cafe); font-size: .9rem; }
 .testimonio figcaption span { font-weight: 400; color: var(--dorado); }
 .testimonios__mas { display: inline-block; margin-top: 6px; color: var(--dorado); font-weight: 600; font-size: .92rem; text-decoration: none; }
+
+/* ---------- Dejar opinión ---------- */
+.btn--opinion {
+  display: inline-flex; margin: 14px auto 4px;
+  background: var(--cafe); color: var(--rosa); border: 2px solid var(--dorado);
+}
+.opinion { max-width: 420px !important; }
+.opinion__form { margin: 0; padding: 14px 20px 20px; overflow-y: auto; }
+.opinion__form > .ayuda:first-child { margin: 0; }
+.estrellas-input {
+  border: 0; padding: 0; margin: 0;
+  display: flex; flex-direction: row-reverse; justify-content: center; gap: 4px;
+}
+.estrellas-input legend { width: 100%; text-align: center; font-weight: 500; font-size: .9rem; color: var(--cafe); margin-bottom: 4px; }
+.estrellas-input input { position: absolute; opacity: 0; pointer-events: none; }
+.estrellas-input label {
+  font-size: 2.2rem; line-height: 1; cursor: pointer; color: var(--rosa-medio);
+  transition: color .15s, transform .15s;
+}
+.estrellas-input input:checked ~ label,
+.estrellas-input label:hover, .estrellas-input label:hover ~ label { color: var(--dorado-claro); }
+.estrellas-input input:focus-visible + label { outline: 2px solid var(--dorado); border-radius: 4px; }
+.estrellas-input label:active { transform: scale(.9); }

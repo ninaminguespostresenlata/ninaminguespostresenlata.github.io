@@ -98,7 +98,9 @@ window.NEGOCIO = {
   ],
 
   // Galería de eventos (fotos en img/eventos)
-  // Testimonios de clientes (sin fotos). "producto" es opcional.
+  // Testimonios de clientes (sin fotos). "producto", "ocasion" y "estrellas" (1 a 5,
+  // si no se pone son 5) son opcionales. Las opiniones nuevas llegan por WhatsApp desde
+  // el botón "Deja tu opinión"; para publicarlas, copia un bloque y pega aquí sus datos.
   testimonios: [
     {
       texto: "Súper ricos, a los niños les encantaron. La verdad es una muy buena idea para fiestas en las escuelitas. A las maestras les encantó el concepto, ya que no se hace cochinero con los pastelitos.",

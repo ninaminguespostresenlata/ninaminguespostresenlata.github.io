@@ -105,12 +105,48 @@
   // Testimonios
   $("#lista-testimonios").innerHTML = (N.testimonios || []).map(t => `
     <figure class="testimonio">
-      <div class="testimonio__estrellas" aria-label="5 estrellas">★★★★★</div>
+      <div class="testimonio__estrellas" aria-label="${t.estrellas || 5} estrellas">${"★".repeat(t.estrellas || 5)}${"☆".repeat(5 - (t.estrellas || 5))}</div>
       <blockquote>“${esc(t.texto)}”</blockquote>
       <figcaption>— ${esc(t.nombre)}${t.producto ? ` · <span>${esc(t.producto)}</span>` : t.ocasion ? ` · <span>${esc(t.ocasion)}</span>` : ""}</figcaption>
     </figure>`).join("");
   $("#link-testimonios").href = `https://instagram.com/${N.instagram}`;
-  $("#testimonios").hidden = !(N.testimonios || []).length;
+  // La sección siempre se muestra para que el botón de opinión esté disponible
+  $("#testimonios").hidden = false;
+  $("#lista-testimonios").hidden = !(N.testimonios || []).length;
+
+  // ---------- Dejar opinión (llega por WhatsApp; se publica a mano en datos.js) ----------
+  $("#opinion-producto").insertAdjacentHTML("beforeend",
+    Object.values(productos).filter(p => p.latas === 1 && !p.agotado)
+      .map(p => `<option>${esc(p.nombre)}</option>`).join("") + `<option>Varios sabores</option>`);
+  $("#btn-opinion").addEventListener("click", () => abrir($("#opinion")));
+  $("#form-opinion").addEventListener("submit", e => {
+    e.preventDefault();
+    const d = Object.fromEntries(new FormData(e.target));
+    const err = !(d.nombre || "").trim() ? "Escribe tu nombre."
+      : (d.texto || "").trim().length < 5 ? "Escribe tu comentario." : "";
+    $("#error-opinion").textContent = err;
+    if (err) return;
+    const n = +d.estrellas || 5;
+    const msg = [
+      `⭐ *Opinión para la página de ${N.nombre}*`,
+      ``,
+      `Calificación: ${"★".repeat(n)}${"☆".repeat(5 - n)} (${n}/5)`,
+      `Nombre: ${d.nombre.trim()}`,
+      d.producto ? `Probé: ${d.producto}` : null,
+      `Comentario: ${d.texto.trim()}`,
+      ``,
+      `Autorizo que publiquen mi opinión con mi nombre en su página.`,
+    ].filter(l => l !== null).join("\n");
+    window.open(`https://wa.me/${N.whatsapp}?text=${encodeURIComponent(msg)}`, "_blank");
+    e.target.reset();
+    cerrar($("#opinion"));
+    aviso("¡Gracias! Envía el mensaje en WhatsApp 💕");
+  });
+  // Link directo para clientes: ninamingues.com/#opinion
+  if (location.hash === "#opinion") setTimeout(() => {
+    $("#testimonios").scrollIntoView();
+    abrir($("#opinion"));
+  }, 300);
 
   $("#pagos").insertAdjacentHTML("beforeend", N.formasDePago.map((f, i) =>
     `<label class="chip"><input type="radio" name="pago" value="${esc(f)}" ${i === 0 ? "required" : ""}> ${esc(f)}</label>`).join(""));
@@ -251,13 +287,14 @@
   function cerrar(panel) {
     if (!panel) return;
     panel.hidden = true;
-    if ($("#panel").hidden && $("#selector").hidden) document.body.style.overflow = "";
+    if ($("#panel").hidden && $("#selector").hidden && $("#opinion").hidden) document.body.style.overflow = "";
     if (ultimoFoco) ultimoFoco.focus({ preventScroll: true });
   }
   document.addEventListener("keydown", e => {
     if (e.key !== "Escape") return;
     if (!$("#visor").hidden) { $("#visor").hidden = true; return; }
-    if (!$("#selector").hidden) cerrar($("#selector"));
+    if (!$("#opinion").hidden) cerrar($("#opinion"));
+    else if (!$("#selector").hidden) cerrar($("#selector"));
     else if (!$("#panel").hidden) cerrar($("#panel"));
   });
   $("#carrito-btn").addEventListener("click", () => abrir($("#panel")));

@@ -55,3 +55,18 @@ Todo está en **`datos.js`**. Ahí puedes:
 **Fotos:** súbelas a `img/productos/` (formato .jpg, idealmente verticales 4:5 y de unos 800 px de ancho) y escribe su ruta en `foto:`. Los productos sin foto muestran el logo.
 
 Desde la página de GitHub puedes editar `datos.js` (ícono del lápiz) y subir fotos (*Add file → Upload files*) sin instalar nada.
+
+## 5. Opiniones de clientes
+
+- En la sección **"Lo que dicen nuestros clientes"** hay un botón **"Deja tu opinión"**.
+- El cliente elige estrellas, escribe su nombre, el sabor y su comentario. Al enviarlo **se abre WhatsApp y la opinión te llega a ti**; no se publica sola.
+- Link directo para mandar al entregar un pedido: **https://ninamingues.com/#opinion** (abre el formulario de inmediato).
+- Para publicar una opinión aprobada: en `datos.js`, dentro de `testimonios`, copia un bloque y cambia los datos:
+  ```
+  {
+    texto: "Lo que escribió el cliente",
+    nombre: "Ana",
+    producto: "Chocolate & Nutella",
+    estrellas: 5,
+  },
+  ```
