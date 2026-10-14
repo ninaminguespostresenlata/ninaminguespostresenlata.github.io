@@ -106,13 +106,14 @@ window.NEGOCIO = {
       ocasion: "Fiesta escolar",
     },
     {
-      texto: "Sí están buenos los postres, es una opción diferente para los invitados. Gracias por regalarnos la degustación.",
+      texto: "Sí están buenos los postres, es una opción diferente para los invitados.",
       nombre: "Gris",
-      ocasion: "Degustación para eventos",
+      ocasion: "Evento",
     },
     {
       texto: "10000/10 💎 Ya me había dicho quien me lo recomendó que estaban muuuy buenos y no se equivocó.",
       nombre: "César",
+      producto: "Pay Nina & Dulce",
     },
     {
       texto: "El de Ferrero, por cierto, ¡está SÚPER DELICIOSO! Me gustó mucho.",
