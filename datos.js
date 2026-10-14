@@ -76,7 +76,7 @@ window.NEGOCIO = {
   ],
 
   notas: [
-    "Cada lata es una porción generosa, mayor a una rebanada tradicional",
+    "Cada lata es una porción generosa e individual",
     "Precio por lata · 9 cm de alto y 250 ml (postres y bebidas)",
     "Pedido mínimo: 4 latas del mismo sabor",
     "Pedidos con 2 días de anticipación (eventos: 5 días, también en domingo)",
