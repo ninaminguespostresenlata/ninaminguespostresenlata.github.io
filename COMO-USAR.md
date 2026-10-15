@@ -91,3 +91,10 @@ Están en `datos.js`, en `preguntas`. Para agregar o cambiar una, edita o copia 
 
 - **Alérgenos:** en cada producto de `datos.js` puedes poner `alergenos: ["Contiene avellana"]` (o "Contiene alcohol", "Lleva nuez", etc.). Se muestran como etiqueta en la tarjeta.
 - **Compartir menú:** botón arriba y al final de la página. En el celular abre el menú de compartir; en computadora abre WhatsApp con el link listo.
+
+## 9. Chantilly o Betún de mantequilla
+
+- Los bizcochos con `cremas: true` en `datos.js` piden elegir **Chantilly** o **Betún de mantequilla** al agregarlos.
+- El costo extra está al inicio de `datos.js`, en `cremas` (`extra: 10`). Se suma por lata, en precio normal y de evento.
+- Para quitar la opción en un sabor, borra su línea `cremas: true,`.
+- El mínimo de 4 latas aplica por crema (4 con chantilly, 4 con betún).

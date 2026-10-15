@@ -805,3 +805,8 @@ button, input, textarea { font: inherit; color: inherit; }
 }
 .btn--compartir:hover { background: var(--cafe); color: var(--rosa); }
 .pie .btn--compartir { margin-top: 8px; }
+
+/* Opción de crema (Chantilly / Betún de mantequilla) */
+.cremas { margin: 6px 0 0; font-size: .82rem; color: var(--cafe-texto, #4A3A2A); line-height: 1.4; }
+.cremas b { color: var(--cafe, #261B03); font-weight: 600; }
+.selector__opciones button small { font-size: .82rem; font-weight: 400; opacity: .8; }

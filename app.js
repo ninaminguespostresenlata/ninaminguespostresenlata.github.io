@@ -9,6 +9,7 @@
   CATS.forEach(c => c.productos.forEach(p => {
     p.minimo = p.minimo ?? N.minimoLatas;
     p.latas = p.latas ?? 1;
+    if (p.cremas && N.cremas) p.opciones = N.cremas.map(c => c.nombre);
     productos[p.id] = p;
   }));
 
@@ -22,6 +23,17 @@
   let carrito = {};
   try { carrito = JSON.parse(localStorage.getItem(CLAVE)) || {}; } catch (e) { carrito = {}; }
   Object.keys(carrito).forEach(k => { if (!productos[k.split("|")[0]]) delete carrito[k]; });
+  // Pedidos guardados antes de las opciones de crema → Chantilly
+  Object.keys(carrito).forEach(k => {
+    const p = productos[k];
+    if (p && p.cremas && p.opciones) { const n = `${k}|${p.opciones[0]}`; carrito[n] = (carrito[n] || 0) + carrito[k]; delete carrito[k]; }
+  });
+  // Costo extra por lata según la opción (ej. Betún de mantequilla +$10)
+  const extraDe = (p, opcion) => {
+    if (!p.cremas || !N.cremas) return 0;
+    const c = N.cremas.find(x => x.nombre === opcion);
+    return c ? c.extra || 0 : 0;
+  };
 
   function guardar() {
     try { localStorage.setItem(CLAVE, JSON.stringify(carrito)); } catch (e) { /* sin almacenamiento */ }
@@ -36,10 +48,11 @@
     const evento = latas >= N.latasParaEvento;
     let subtotal = 0, normal = 0;
     lineas.forEach(l => {
-      l.unit = evento && l.p.precioEvento ? l.p.precioEvento : l.p.precio;
+      const extra = extraDe(l.p, l.opcion);
+      l.unit = (evento && l.p.precioEvento ? l.p.precioEvento : l.p.precio) + extra;
       l.total = l.unit * l.cant;
       subtotal += l.total;
-      normal += l.p.precio * l.cant;
+      normal += (l.p.precio + extra) * l.cant;
     });
     const piezas = lineas.reduce((s, l) => s + l.cant, 0);
     // En eventos cada sabor necesita un mínimo de latas (receta completa)
@@ -249,6 +262,7 @@
         <div class="tarjeta__info">
           <h3 class="tarjeta__nombre">${esc(p.nombre)}</h3>
           <p class="tarjeta__desc">${esc(p.descripcion)}</p>
+          ${p.cremas && N.cremas ? `<p class="cremas">Elige: ${N.cremas.map(c => `${esc(c.nombre)}${c.extra ? ` <b>+${dinero(c.extra)}</b>` : ""}`).join(" o ")}</p>` : ""}
           ${(p.alergenos || []).length ? `<p class="alergenos">${p.alergenos.map(a => `<span>${esc(a)}</span>`).join("")}</p>` : ""}
           <div class="tarjeta__precios">
             <span class="precio">${dinero(p.precio)}${p.latas === 1 ? " <small>c/u</small>" : ""}</span>
@@ -307,7 +321,8 @@
     const fotos = !!p.fotosOpcion;
     $("#selector-opciones").classList.toggle("con-fotos", fotos);
     $("#selector-opciones").innerHTML = p.opciones.map(o => `<button type="button" data-opcion="${esc(o)}">${
-      fotos && p.fotosOpcion[o] ? `<img src="${esc(p.fotosOpcion[o])}" alt="">` : ""}<span>${esc(o)}</span></button>`).join("");
+      fotos && p.fotosOpcion[o] ? `<img src="${esc(p.fotosOpcion[o])}" alt="">` : ""}<span>${esc(o)}</span>${
+      p.cremas ? `<small>${dinero(p.precio + extraDe(p, o))} c/u${p.precioEvento ? ` · ${dinero(p.precioEvento + extraDe(p, o))} en eventos` : ""}</small>` : ""}</button>`).join("");
     $("#selector-opciones").onclick = e => {
       const b = e.target.closest("[data-opcion]");
       if (!b) return;

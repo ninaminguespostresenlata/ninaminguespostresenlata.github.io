@@ -26,6 +26,8 @@
  *                  eventos (1 normalmente, 4 para la caja, 0 para extras)
  *    agotado     → pon true para ocultar temporalmente el botón de agregar
  *    alergenos   → avisos que se muestran en la tarjeta, ej. ["Contiene avellana", "Contiene alcohol"]
+ *    cremas      → pon true para que el cliente elija Chantilly o Betún de
+ *                  mantequilla (las opciones y el costo extra están en NEGOCIO.cremas)
  */
 
 window.NEGOCIO = {
@@ -51,6 +53,13 @@ window.NEGOCIO = {
   // Contador de visitas (GoatCounter, gratis). Pon aquí el código de tu cuenta,
   // por ejemplo "ninamingues" si tu panel es https://ninamingues.goatcounter.com
   goatcounter: "",
+
+  // Opciones de crema para los productos con cremas: true.
+  // extra = pesos que se suman por lata (en precio normal y de evento).
+  cremas: [
+    { nombre: "Chantilly", extra: 0 },
+    { nombre: "Betún de mantequilla", extra: 10 },
+  ],
 
   // Reglas de pedido
   minimoLatas: 4,             // por sabor
@@ -228,6 +237,7 @@ window.CATEGORIAS = [
         nombre: "Vainilla & Dulce de Leche",
         descripcion: "Bizcocho de Vainilla con Chantilly de Vainilla, relleno de Dulce de Leche.",
         precio: 80, precioEvento: 75, peso: 182,
+        cremas: true,
         foto: "img/productos/vainilla-dulce-de-leche.jpg",
       },
       {
@@ -235,6 +245,7 @@ window.CATEGORIAS = [
         nombre: "Chocolate & Dulce de Leche",
         descripcion: "Bizcocho de Chocolate con Chantilly de Chocolate, relleno de Dulce de Leche.",
         precio: 80, precioEvento: 75, peso: 182,
+        cremas: true,
         foto: "img/productos/chocolate-tradicional.jpg",
         etiqueta: "Más vendido",
       },
@@ -243,6 +254,7 @@ window.CATEGORIAS = [
         nombre: "Espresso & Dulce de Leche",
         descripcion: "Bizcocho de Espresso, Chantilly de Café, relleno de Dulce de Leche.",
         precio: 80, precioEvento: 75, peso: 182,
+        cremas: true,
         foto: "img/productos/espresso-dulce-de-leche.jpg",
       },
       {
@@ -250,6 +262,7 @@ window.CATEGORIAS = [
         nombre: "Ferrero & Nutella",
         descripcion: "Bizcocho de Chocolate (Tipo Brownie), Chantilly de Chocolate con Nutella, relleno de Nutella y trozos de Ferrero.",
         precio: 90, precioEvento: 85,
+        cremas: true,
         alergenos: ["Contiene avellana"],
         foto: "img/productos/ferrero-nutella.jpg",
         etiqueta: "Agotado",
@@ -260,6 +273,7 @@ window.CATEGORIAS = [
         nombre: "Chocolate & Nutella",
         descripcion: "Bizcocho de Chocolate, Chantilly de Chocolate, relleno de Nutella.",
         precio: 85, precioEvento: 80,
+        cremas: true,
         alergenos: ["Contiene avellana"],
         foto: "img/productos/chocolate-nutella.jpg",
         etiqueta: "Nuevo",
@@ -277,6 +291,7 @@ window.CATEGORIAS = [
         nombre: "Chocolate & Oreo",
         descripcion: "Bizcocho de Chocolate, Chantilly de Chocolate con trozos de Oreo.",
         precio: 85, precioEvento: 80,
+        cremas: true,
         foto: "img/productos/chocolate-oreo.jpg",
         etiqueta: "Nuevo",
       },
@@ -285,6 +300,7 @@ window.CATEGORIAS = [
         nombre: "Cake Party",
         descripcion: "Bizcocho de Vainilla con Sprinkles, Chantilly de Vainilla con Sprinkles, relleno de Dulce de Leche.",
         precio: 80, precioEvento: 75,
+        cremas: true,
         foto: "img/productos/cake-party.jpg",
       },
     ],
