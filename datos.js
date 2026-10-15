@@ -226,14 +226,14 @@ window.CATEGORIAS = [
       {
         id: "vainilla-dulce",
         nombre: "Vainilla & Dulce de Leche",
-        descripcion: "Bizcocho de vainilla con dulce de leche.",
+        descripcion: "Bizcocho de Vainilla con Chantilly de Vainilla, relleno de Dulce de Leche.",
         precio: 80, precioEvento: 75, peso: 182,
         foto: "img/productos/vainilla-dulce-de-leche.jpg",
       },
       {
         id: "chocolate-tradicional",
-        nombre: "Chocolate Tradicional",
-        descripcion: "Bizcocho de chocolate con dulce de leche.",
+        nombre: "Chocolate & Dulce de Leche",
+        descripcion: "Bizcocho de Chocolate con Chantilly de Chocolate, relleno de Dulce de Leche.",
         precio: 80, precioEvento: 75, peso: 182,
         foto: "img/productos/chocolate-tradicional.jpg",
         etiqueta: "Más vendido",
@@ -241,14 +241,14 @@ window.CATEGORIAS = [
       {
         id: "espresso-dulce",
         nombre: "Espresso & Dulce de Leche",
-        descripcion: "Bizcocho de café intenso con dulce de leche.",
+        descripcion: "Bizcocho de Espresso, Chantilly de Café, relleno de Dulce de Leche.",
         precio: 80, precioEvento: 75, peso: 182,
         foto: "img/productos/espresso-dulce-de-leche.jpg",
       },
       {
         id: "ferrero-nutella",
         nombre: "Ferrero & Nutella",
-        descripcion: "Bizcocho de chocolate (tipo brownie) con Nutella y Ferrero en trozos.",
+        descripcion: "Bizcocho de Chocolate (Tipo Brownie), Chantilly de Chocolate con Nutella, relleno de Nutella y trozos de Ferrero.",
         precio: 90, precioEvento: 85,
         alergenos: ["Contiene avellana"],
         foto: "img/productos/ferrero-nutella.jpg",
@@ -258,7 +258,7 @@ window.CATEGORIAS = [
       {
         id: "chocolate-nutella",
         nombre: "Chocolate & Nutella",
-        descripcion: "Bizcocho de chocolate (tipo brownie) relleno de Nutella con chantilly de chocolate.",
+        descripcion: "Bizcocho de Chocolate, Chantilly de Chocolate, relleno de Nutella.",
         precio: 85, precioEvento: 80,
         alergenos: ["Contiene avellana"],
         foto: "img/productos/chocolate-nutella.jpg",
@@ -266,8 +266,8 @@ window.CATEGORIAS = [
       },
       {
         id: "doble-chocolate",
-        nombre: "Doble Chocolate",
-        descripcion: "Bizcocho de chocolate con ganache de chocolate.",
+        nombre: "Doble Chocolate (Estilo Matilda)",
+        descripcion: "Bizcocho de Chocolate Húmedo con Ganache de Chocolate semiamargo.",
         precio: 85, precioEvento: 80, peso: 201,
         foto: "img/productos/doble-chocolate.jpg",
         etiqueta: "Nuevo",
@@ -275,7 +275,7 @@ window.CATEGORIAS = [
       {
         id: "chocolate-oreo",
         nombre: "Chocolate & Oreo",
-        descripcion: "Bizcocho de chocolate con crema de chocolate y galleta Oreo.",
+        descripcion: "Bizcocho de Chocolate, Chantilly de Chocolate con trozos de Oreo.",
         precio: 85, precioEvento: 80,
         foto: "img/productos/chocolate-oreo.jpg",
         etiqueta: "Nuevo",
@@ -283,7 +283,7 @@ window.CATEGORIAS = [
       {
         id: "cake-party",
         nombre: "Cake Party",
-        descripcion: "Bizcocho de vainilla con dulce de leche y sprinkles.",
+        descripcion: "Bizcocho de Vainilla con Sprinkles, Chantilly de Vainilla con Sprinkles, relleno de Dulce de Leche.",
         precio: 80, precioEvento: 75,
         foto: "img/productos/cake-party.jpg",
       },
@@ -295,14 +295,14 @@ window.CATEGORIAS = [
       {
         id: "pay-nina",
         nombre: "Pay Nina Míngues",
-        descripcion: "Tradicional pay de queso y crema.",
+        descripcion: "Tradicional Pay de Queso & Chantilly de Vainilla.",
         precio: 95, precioEvento: 90,
         foto: "img/productos/pay-nina.jpg",
       },
       {
         id: "pay-nina-dulce",
         nombre: "Pay Nina & Dulce",
-        descripcion: "Pay de queso relleno de dulce de leche y crema.",
+        descripcion: "Tradicional Pay de Queso, Chantilly de Vainilla, relleno de Dulce de Leche.",
         precio: 95, precioEvento: 90, peso: 223,
         foto: "img/productos/pay-nina-dulce.jpg",
         etiqueta: "Más vendido",
@@ -310,14 +310,14 @@ window.CATEGORIAS = [
       {
         id: "carlota-cafe",
         nombre: "Carlota de Café",
-        descripcion: "Capas de galleta con una suave crema de café.",
+        descripcion: "Capas de Galleta María, Crema de Café & Queso Crema.",
         precio: 90, precioEvento: 85,
         foto: "img/productos/carlota-cafe.jpg",
       },
       {
         id: "carlota-limon",
         nombre: "Carlota de Limón",
-        descripcion: "Capas de galleta con una suave crema de limón.",
+        descripcion: "Capas de Galleta María, Crema Suave de Limón & Limón Rallado.",
         precio: 90, precioEvento: 85,
         foto: "img/productos/carlota-limon.jpg",
       },
@@ -338,7 +338,7 @@ window.CATEGORIAS = [
       {
         id: "revelacion",
         nombre: "Revelación de Género",
-        descripcion: "Bizcocho con relleno sorpresa: ¡descubre si es niño o niña al abrirla!",
+        descripcion: "Bizcocho de Vainilla con Relleno Sorpresa.",
         precio: 80, precioEvento: 75,
         opciones: ["Azul", "Rosa"],
         fotosOpcion: {
@@ -349,7 +349,7 @@ window.CATEGORIAS = [
       {
         id: "baby-shower",
         nombre: "Baby Shower",
-        descripcion: "Bizcocho con capas de color azul o rosa.",
+        descripcion: "Bizcocho de Vainilla, Chantilly de Vainilla (Azul o Rosa), relleno de Dulce de Leche.",
         precio: 80, precioEvento: 75,
         opciones: ["Azul", "Rosa"],
         fotosOpcion: {
@@ -364,8 +364,8 @@ window.CATEGORIAS = [
     productos: [
       {
         id: "latte-sin-azucar",
-        nombre: "Latte Helado Sin Azúcar",
-        descripcion: "Café con leche bien frío, sin azúcar.",
+        nombre: "Latte Helado Sin Azúcar Añadida",
+        descripcion: "Café con leche bien frío, sin azúcar añadida.",
         precio: 55, precioEvento: 50,
         foto: "img/productos/latte-sin-azucar.jpg",
         etiqueta: "Más vendido",
