@@ -110,6 +110,22 @@
       <figcaption>— ${esc(t.nombre)}${t.producto ? ` · <span>${esc(t.producto)}</span>` : t.ocasion ? ` · <span>${esc(t.ocasion)}</span>` : ""}</figcaption>
     </figure>`).join("");
   $("#link-testimonios").href = `https://instagram.com/${N.instagram}`;
+  // Aviso de temporada
+  if (N.aviso && N.aviso.titulo) {
+    $("#aviso-titulo").textContent = N.aviso.titulo.replace(/^Próximamente:\s*/i, "");
+    $("#aviso-texto").textContent = N.aviso.texto || "";
+    $("#aviso-temporada").hidden = false;
+  }
+
+  // Contador de visitas (GoatCounter)
+  const contar = (path) => { try { window.goatcounter && window.goatcounter.count && window.goatcounter.count({ path, event: true }); } catch (e) {} };
+  if (N.goatcounter) {
+    const sc = document.createElement("script");
+    sc.async = true; sc.src = "https://gc.zgo.at/count.js";
+    sc.dataset.goatcounter = `https://${N.goatcounter}.goatcounter.com/count`;
+    document.head.appendChild(sc);
+  }
+
   // Preguntas frecuentes
   $("#lista-preguntas").innerHTML = (N.preguntas || []).map(q => `
     <details class="faq__item">
@@ -416,6 +432,7 @@
       d.notas && d.notas.trim() ? `Notas: ${d.notas.trim()}` : null,
     ].filter(x => x !== null).join("\n");
 
+    contar("pedido-enviado");
     window.open(`https://wa.me/${N.whatsapp}?text=${encodeURIComponent(msg)}`, "_blank", "noopener");
   });
 

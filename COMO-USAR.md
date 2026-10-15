@@ -80,3 +80,8 @@ Están en `datos.js`, en `preguntas`. Para agregar o cambiar una, edita o copia 
   respuesta: "...",
 },
 ```
+
+## 7. Aviso de temporada y contador de visitas
+
+- **Aviso:** en `datos.js`, `aviso: { titulo, texto }`. Para ocultarlo, deja `titulo: ""`.
+- **Contador de visitas (GoatCounter):** crea una cuenta gratis en goatcounter.com con el código `ninamingues` y escríbelo en `goatcounter: "ninamingues"`. Las visitas se ven en https://ninamingues.goatcounter.com. Cada pedido enviado por WhatsApp se cuenta como el evento "pedido-enviado".

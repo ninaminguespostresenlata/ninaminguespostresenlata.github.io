@@ -41,6 +41,16 @@ window.NEGOCIO = {
 
   moneda: "$",
 
+  // Aviso destacado arriba del menú. Para ocultarlo, deja titulo: "".
+  aviso: {
+    titulo: "Postres navideños",
+    texto: "Chocolate Abuelita, Red Velvet, Rompope & Canela y más sabores de temporada llegan en diciembre 🎄",
+  },
+
+  // Contador de visitas (GoatCounter, gratis). Pon aquí el código de tu cuenta,
+  // por ejemplo "ninamingues" si tu panel es https://ninamingues.goatcounter.com
+  goatcounter: "",
+
   // Reglas de pedido
   minimoLatas: 4,             // por sabor
   latasParaEvento: 15,        // a partir de aquí aplica el precio de eventos
