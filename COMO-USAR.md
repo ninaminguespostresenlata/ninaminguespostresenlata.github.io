@@ -85,3 +85,4 @@ Están en `datos.js`, en `preguntas`. Para agregar o cambiar una, edita o copia 
 
 - **Aviso:** en `datos.js`, `aviso: { titulo, texto }`. Para ocultarlo, deja `titulo: ""`.
 - **Contador de visitas (GoatCounter):** crea una cuenta gratis en goatcounter.com con el código `ninamingues` y escríbelo en `goatcounter: "ninamingues"`. Las visitas se ven en https://ninamingues.goatcounter.com. Cada pedido enviado por WhatsApp se cuenta como el evento "pedido-enviado".
+- **Google Analytics:** ya está instalado (ID G-4MEQ9CV8V8). Cada pedido enviado se registra como el evento `pedido_enviado`, con el total y el número de latas.

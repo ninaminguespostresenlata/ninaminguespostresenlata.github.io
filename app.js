@@ -118,7 +118,10 @@
   }
 
   // Contador de visitas (GoatCounter)
-  const contar = (path) => { try { window.goatcounter && window.goatcounter.count && window.goatcounter.count({ path, event: true }); } catch (e) {} };
+  const contar = (path, datos) => {
+    try { window.goatcounter && window.goatcounter.count && window.goatcounter.count({ path, event: true }); } catch (e) {}
+    try { window.gtag && window.gtag("event", path.replace(/-/g, "_"), datos || {}); } catch (e) {}
+  };
   if (N.goatcounter) {
     const sc = document.createElement("script");
     sc.async = true; sc.src = "https://gc.zgo.at/count.js";
@@ -432,7 +435,7 @@
       d.notas && d.notas.trim() ? `Notas: ${d.notas.trim()}` : null,
     ].filter(x => x !== null).join("\n");
 
-    contar("pedido-enviado");
+    contar("pedido-enviado", { value: r.subtotal, currency: "MXN", latas: r.latas });
     window.open(`https://wa.me/${N.whatsapp}?text=${encodeURIComponent(msg)}`, "_blank", "noopener");
   });
 
