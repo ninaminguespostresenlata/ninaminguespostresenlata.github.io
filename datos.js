@@ -26,6 +26,7 @@
  *    latas       → cuántas latas cuenta cada unidad para el descuento de
  *                  eventos (1 normalmente, 4 para la caja, 0 para extras)
  *    agotado     → pon true para ocultar temporalmente el botón de agregar
+ *    proximamente→ pon true para mostrarlo con botón "Próximamente" (aún no se puede pedir)
  *    alergenos   → avisos que se muestran en la tarjeta, ej. ["Contiene avellana", "Contiene alcohol"]
  *    cremas      → pon true para que el cliente elija Chantilly o Betún de
  *                  mantequilla (las opciones y el costo extra están en NEGOCIO.cremas)
@@ -51,7 +52,7 @@ window.NEGOCIO = {
   aviso: {
     etiqueta: "Ya disponible",
     titulo: "Chocolate Abuelita",
-    texto: "🍫 Nuestro sabor de temporada para Día de Muertos ya está disponible. Rompope & Canela y más sabores navideños llegan en diciembre 🎄",
+    texto: "🍫 Nuestro sabor de temporada para Día de Muertos ya está disponible. Y en el menú navideño ya puedes pedir Chocolate & Bombón; Rompope & Canela y Red Velvet llegan muy pronto 🎄",
     boton: "Pedir ahora",
     enlace: "#temporada",
   },
@@ -245,6 +246,37 @@ window.CATEGORIAS = [
         precio: 85, precioEvento: 80, peso: 201,
         foto: "img/productos/chocolate-abuelita.jpg",
         etiqueta: "Temporada",
+      },
+    ],
+  },
+  {
+    nombre: "Navidad",
+    productos: [
+      {
+        id: "chocolate-bombon",
+        nombre: "Chocolate & Bombón (Estilo Pastelito)",
+        descripcion: "Bizcocho de Doble Chocolate relleno de suave crema de bombón. Inspirado en ese pastelito de chocolate con crema blanca que comíamos de niños.",
+        precio: 85, precioEvento: 80,
+        etiqueta: "Nuevo",
+      },
+      {
+        id: "rompope-canela",
+        nombre: "Rompope & Canela",
+        descripcion: "Bizcocho de vainilla con canela y rompope, remojado en rompope, relleno de dulce de leche y chantilly de vainilla.",
+        precio: 85, precioEvento: 80,
+        alergenos: ["Contiene alcohol"],
+        foto: "img/productos/rompope-canela.jpg",
+        etiqueta: "Próximamente",
+        proximamente: true,
+      },
+      {
+        id: "red-velvet",
+        nombre: "Red Velvet",
+        descripcion: "Bizcocho Red Velvet con Betún de Queso Crema.",
+        precio: 85, precioEvento: 80,
+        foto: "img/productos/red-velvet.jpg",
+        etiqueta: "Próximamente",
+        proximamente: true,
       },
     ],
   },

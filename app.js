@@ -22,7 +22,7 @@
   // carrito: { "id|opcion": cantidad }
   let carrito = {};
   try { carrito = JSON.parse(localStorage.getItem(CLAVE)) || {}; } catch (e) { carrito = {}; }
-  Object.keys(carrito).forEach(k => { if (!productos[k.split("|")[0]]) delete carrito[k]; });
+  Object.keys(carrito).forEach(k => { const p = productos[k.split("|")[0]]; if (!p || p.agotado || p.proximamente) delete carrito[k]; });
   // Pedidos guardados antes de las opciones de crema → Chantilly
   const nombresCrema = (N.cremas || []).map(c => c.nombre);
   const cremaDe = opcion => (opcion || "").split(" · ").pop();
@@ -180,7 +180,7 @@
 
   // ---------- Dejar opinión (llega por WhatsApp; se publica a mano en datos.js) ----------
   $("#opinion-producto").insertAdjacentHTML("beforeend",
-    Object.values(productos).filter(p => p.latas === 1 && !p.agotado)
+    Object.values(productos).filter(p => p.latas === 1 && !p.agotado && !p.proximamente)
       .map(p => `<option>${esc(p.nombre)}</option>`).join("") + `<option>Varios sabores</option>`);
   $("#btn-opinion").addEventListener("click", () => abrir($("#opinion")));
   $("#form-opinion").addEventListener("submit", e => {
@@ -291,6 +291,7 @@
       const p = productos[t.dataset.id];
       const ctrl = t.querySelector(".control");
       if (p.agotado) { ctrl.innerHTML = `<button class="agregar" disabled>Agotado</button>`; return; }
+      if (p.proximamente) { ctrl.innerHTML = `<button class="agregar" disabled>Próximamente</button>`; return; }
       if (p.opciones) {
         const n = cantidadDe(p.id);
         ctrl.innerHTML = `<button class="agregar" data-elegir="${p.id}">${n ? `Agregar otro · ${n} en pedido` : "Elegir y agregar"}</button>`;
