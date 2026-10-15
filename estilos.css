@@ -791,3 +791,17 @@ button, input, textarea { font: inherit; color: inherit; }
 .aviso-temporada__pre { margin: 0; font-family: var(--condensada); letter-spacing: 3px; text-transform: uppercase; color: var(--dorado-claro); font-size: .95rem; }
 .aviso-temporada__titulo { margin: 2px 0 6px; color: var(--rosa); font-size: clamp(2.1rem, 8vw, 2.8rem); -webkit-text-stroke: .6px var(--rosa); }
 .aviso-temporada__texto { margin: 0 auto; max-width: 40ch; line-height: 1.5; font-size: .95rem; color: var(--rosa-claro); }
+
+/* ---------- Alérgenos y compartir ---------- */
+.alergenos { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 0; }
+.alergenos span {
+  font-size: .74rem; font-weight: 600; letter-spacing: .2px;
+  padding: 3px 9px; border-radius: 999px;
+  background: #FFF4D6; color: var(--dorado); border: 1px solid #EBD9A2;
+}
+.btn--compartir {
+  margin-top: 12px; background: transparent; color: var(--cafe);
+  border: 1.5px solid var(--cafe); padding: 9px 18px;
+}
+.btn--compartir:hover { background: var(--cafe); color: var(--rosa); }
+.pie .btn--compartir { margin-top: 8px; }

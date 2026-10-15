@@ -86,3 +86,8 @@ Están en `datos.js`, en `preguntas`. Para agregar o cambiar una, edita o copia 
 - **Aviso:** en `datos.js`, `aviso: { titulo, texto }`. Para ocultarlo, deja `titulo: ""`.
 - **Contador de visitas (GoatCounter):** crea una cuenta gratis en goatcounter.com con el código `ninamingues` y escríbelo en `goatcounter: "ninamingues"`. Las visitas se ven en https://ninamingues.goatcounter.com. Cada pedido enviado por WhatsApp se cuenta como el evento "pedido-enviado".
 - **Google Analytics:** ya está instalado (ID G-4MEQ9CV8V8). Cada pedido enviado se registra como el evento `pedido_enviado`, con el total y el número de latas.
+
+## 8. Alérgenos y botón de compartir
+
+- **Alérgenos:** en cada producto de `datos.js` puedes poner `alergenos: ["Contiene avellana"]` (o "Contiene alcohol", "Lleva nuez", etc.). Se muestran como etiqueta en la tarjeta.
+- **Compartir menú:** botón arriba y al final de la página. En el celular abre el menú de compartir; en computadora abre WhatsApp con el link listo.

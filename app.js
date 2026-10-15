@@ -110,6 +110,18 @@
       <figcaption>— ${esc(t.nombre)}${t.producto ? ` · <span>${esc(t.producto)}</span>` : t.ocasion ? ` · <span>${esc(t.ocasion)}</span>` : ""}</figcaption>
     </figure>`).join("");
   $("#link-testimonios").href = `https://instagram.com/${N.instagram}`;
+  // Compartir menú
+  document.querySelectorAll("[data-compartir]").forEach(b => b.addEventListener("click", async () => {
+    const url = "https://ninamingues.com/";
+    const texto = `Mira el menú de ${N.nombre} · ${N.subtitulo} 🍫 Puedes armar tu pedido aquí:`;
+    try { window.gtag && window.gtag("event", "compartir_menu"); } catch (e) {}
+    if (navigator.share) {
+      try { await navigator.share({ title: `${N.nombre} · ${N.subtitulo}`, text: texto, url }); return; }
+      catch (e) { if (e && e.name === "AbortError") return; }
+    }
+    window.open(`https://wa.me/?text=${encodeURIComponent(`${texto} ${url}`)}`, "_blank", "noopener");
+  }));
+
   // Aviso de temporada
   if (N.aviso && N.aviso.titulo) {
     $("#aviso-titulo").textContent = N.aviso.titulo.replace(/^Próximamente:\s*/i, "");
@@ -237,6 +249,7 @@
         <div class="tarjeta__info">
           <h3 class="tarjeta__nombre">${esc(p.nombre)}</h3>
           <p class="tarjeta__desc">${esc(p.descripcion)}</p>
+          ${(p.alergenos || []).length ? `<p class="alergenos">${p.alergenos.map(a => `<span>${esc(a)}</span>`).join("")}</p>` : ""}
           <div class="tarjeta__precios">
             <span class="precio">${dinero(p.precio)}${p.latas === 1 ? " <small>c/u</small>" : ""}</span>
             ${p.precioEvento ? `<span class="precio-evento">${dinero(p.precioEvento)} en pedidos de ${N.latasParaEvento}+</span>` : ""}

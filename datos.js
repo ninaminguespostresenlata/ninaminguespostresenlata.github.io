@@ -25,6 +25,7 @@
  *    latas       → cuántas latas cuenta cada unidad para el descuento de
  *                  eventos (1 normalmente, 4 para la caja, 0 para extras)
  *    agotado     → pon true para ocultar temporalmente el botón de agregar
+ *    alergenos   → avisos que se muestran en la tarjeta, ej. ["Contiene avellana", "Contiene alcohol"]
  */
 
 window.NEGOCIO = {
@@ -94,6 +95,7 @@ window.NEGOCIO = {
     "50% de anticipo para apartar tu pedido",
     "El costo de envío depende de tu dirección",
     "Elaborado de forma artesanal con ingredientes de calidad",
+    "Nuestros postres contienen lácteos, huevo y gluten, y pueden contener trazas de nuez y cacahuate",
   ],
 
   // Mensaje que se abre al tocar "Cotizar mi evento"
@@ -248,6 +250,7 @@ window.CATEGORIAS = [
         nombre: "Ferrero & Nutella",
         descripcion: "Bizcocho de chocolate (tipo brownie) con Nutella y Ferrero en trozos.",
         precio: 90, precioEvento: 85,
+        alergenos: ["Contiene avellana"],
         foto: "img/productos/ferrero-nutella.jpg",
         etiqueta: "Agotado",
         agotado: true,
@@ -257,6 +260,7 @@ window.CATEGORIAS = [
         nombre: "Chocolate & Nutella",
         descripcion: "Bizcocho de chocolate (tipo brownie) relleno de Nutella con chantilly de chocolate.",
         precio: 85, precioEvento: 80,
+        alergenos: ["Contiene avellana"],
         foto: "img/productos/chocolate-nutella.jpg",
         etiqueta: "Nuevo",
       },
