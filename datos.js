@@ -243,6 +243,7 @@ window.CATEGORIAS = [
         nombre: "Chocolate Abuelita",
         descripcion: "Bizcocho de Doble Chocolate con Ganache de Chocolate Abuelita.",
         precio: 85, precioEvento: 80, peso: 201,
+        foto: "img/productos/chocolate-abuelita.jpg",
         etiqueta: "Temporada",
       },
     ],
