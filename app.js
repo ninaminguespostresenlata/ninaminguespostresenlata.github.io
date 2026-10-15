@@ -9,7 +9,7 @@
   CATS.forEach(c => c.productos.forEach(p => {
     p.minimo = p.minimo ?? N.minimoLatas;
     p.latas = p.latas ?? 1;
-    if (p.cremas && N.cremas) p.opciones = N.cremas.map(c => c.nombre);
+    if (p.cremas && N.cremas && !p.opciones) p.opciones = N.cremas.map(c => c.nombre);
     productos[p.id] = p;
   }));
 
@@ -24,14 +24,19 @@
   try { carrito = JSON.parse(localStorage.getItem(CLAVE)) || {}; } catch (e) { carrito = {}; }
   Object.keys(carrito).forEach(k => { if (!productos[k.split("|")[0]]) delete carrito[k]; });
   // Pedidos guardados antes de las opciones de crema → Chantilly
+  const nombresCrema = (N.cremas || []).map(c => c.nombre);
+  const cremaDe = opcion => (opcion || "").split(" · ").pop();
   Object.keys(carrito).forEach(k => {
-    const p = productos[k];
-    if (p && p.cremas && p.opciones) { const n = `${k}|${p.opciones[0]}`; carrito[n] = (carrito[n] || 0) + carrito[k]; delete carrito[k]; }
+    const [id, op] = k.split("|");
+    const p = productos[id];
+    if (!p || !p.cremas || !nombresCrema.length || nombresCrema.includes(cremaDe(op))) return;
+    const n = `${id}|${op ? `${op} · ` : ""}${nombresCrema[0]}`;
+    carrito[n] = (carrito[n] || 0) + carrito[k]; delete carrito[k];
   });
   // Costo extra por lata según la opción (ej. Betún de mantequilla +$10)
   const extraDe = (p, opcion) => {
     if (!p.cremas || !N.cremas) return 0;
-    const c = N.cremas.find(x => x.nombre === opcion);
+    const c = N.cremas.find(x => x.nombre === cremaDe(opcion));
     return c ? c.extra || 0 : 0;
   };
 
@@ -65,7 +70,7 @@
   }
 
   function fotoDe(p, opcion) {
-    return (p.fotosOpcion && p.fotosOpcion[opcion]) || p.foto || "";
+    return (p.fotosOpcion && p.fotosOpcion[(opcion || "").split(" · ")[0]]) || p.foto || "";
   }
 
   function cantidadDe(id) {
@@ -316,17 +321,24 @@
   document.querySelectorAll(".seccion, #eventos").forEach(s => obs.observe(s));
 
   // ---------- Selector de opciones ----------
-  function abrirSelector(p) {
-    $("#selector-titulo").textContent = p.nombre;
-    const fotos = !!p.fotosOpcion;
+  // Productos con color y crema (Revelación, Baby Shower): primero el color, luego la crema
+  function abrirSelector(p, base) {
+    const pideCrema = p.cremas && nombresCrema.length && !nombresCrema.includes(p.opciones[0]);
+    const lista = base ? nombresCrema : p.opciones;
+    const ayuda = $("#selector .ayuda");
+    if (ayuda) ayuda.textContent = base ? "Ahora elige la crema" : pideCrema ? "Elige el color" : "Elige una opción";
+    $("#selector-titulo").textContent = base ? `${p.nombre} · ${base}` : p.nombre;
+    const fotos = !base && !!p.fotosOpcion;
     $("#selector-opciones").classList.toggle("con-fotos", fotos);
-    $("#selector-opciones").innerHTML = p.opciones.map(o => `<button type="button" data-opcion="${esc(o)}">${
-      fotos && p.fotosOpcion[o] ? `<img src="${esc(p.fotosOpcion[o])}" alt="">` : ""}<span>${esc(o)}</span>${
-      p.cremas ? `<small>${dinero(p.precio + extraDe(p, o))} c/u${p.precioEvento ? ` · ${dinero(p.precioEvento + extraDe(p, o))} en eventos` : ""}</small>` : ""}</button>`).join("");
+    const precioOp = o => p.cremas && (base || !pideCrema)
+      ? `<small>${dinero(p.precio + extraDe(p, o))} c/u${p.precioEvento ? ` · ${dinero(p.precioEvento + extraDe(p, o))} en eventos` : ""}</small>` : "";
+    $("#selector-opciones").innerHTML = lista.map(o => `<button type="button" data-opcion="${esc(o)}">${
+      fotos && p.fotosOpcion[o] ? `<img src="${esc(p.fotosOpcion[o])}" alt="">` : ""}<span>${esc(o)}</span>${precioOp(o)}</button>`).join("");
     $("#selector-opciones").onclick = e => {
       const b = e.target.closest("[data-opcion]");
       if (!b) return;
-      cambiar(`${p.id}|${b.dataset.opcion}`, +1);
+      if (pideCrema && !base) { abrirSelector(p, b.dataset.opcion); return; }
+      cambiar(`${p.id}|${base ? `${base} · ` : ""}${b.dataset.opcion}`, +1);
       cerrar($("#selector"));
     };
     abrir($("#selector"));
@@ -335,7 +347,7 @@
   // ---------- Paneles ----------
   let ultimoFoco = null;
   function abrir(panel) {
-    ultimoFoco = document.activeElement;
+    if (panel.hidden) ultimoFoco = document.activeElement;
     panel.hidden = false;
     document.body.style.overflow = "hidden";
     const foco = panel.querySelector("button, input");

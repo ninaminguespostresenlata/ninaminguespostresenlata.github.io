@@ -356,6 +356,7 @@ window.CATEGORIAS = [
         nombre: "Revelación de Género",
         descripcion: "Bizcocho de Vainilla con Relleno Sorpresa.",
         precio: 80, precioEvento: 75,
+        cremas: true,
         opciones: ["Azul", "Rosa"],
         fotosOpcion: {
           Azul: "img/productos/revelacion-azul.jpg",
@@ -367,6 +368,7 @@ window.CATEGORIAS = [
         nombre: "Baby Shower",
         descripcion: "Bizcocho de Vainilla, Chantilly de Vainilla (Azul o Rosa), relleno de Dulce de Leche.",
         precio: 80, precioEvento: 75,
+        cremas: true,
         opciones: ["Azul", "Rosa"],
         fotosOpcion: {
           Azul: "img/productos/baby-shower-azul.jpg",

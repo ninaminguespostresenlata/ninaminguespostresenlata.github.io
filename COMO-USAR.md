@@ -94,7 +94,8 @@ Están en `datos.js`, en `preguntas`. Para agregar o cambiar una, edita o copia 
 
 ## 9. Chantilly o Betún de mantequilla
 
-- Los bizcochos con `cremas: true` en `datos.js` piden elegir **Chantilly** o **Betún de mantequilla** al agregarlos.
+- Los productos con `cremas: true` (bizcochos, Revelación y Baby Shower) en `datos.js` piden elegir **Chantilly** o **Betún de mantequilla** al agregarlos.
 - El costo extra está al inicio de `datos.js`, en `cremas` (`extra: 10`). Se suma por lata, en precio normal y de evento.
 - Para quitar la opción en un sabor, borra su línea `cremas: true,`.
 - El mínimo de 4 latas aplica por crema (4 con chantilly, 4 con betún).
+- En Revelación y Baby Shower el cliente elige primero el color y después la crema.
