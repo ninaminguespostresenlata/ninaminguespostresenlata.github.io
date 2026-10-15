@@ -144,6 +144,12 @@
   if (N.aviso && N.aviso.titulo) {
     $("#aviso-titulo").textContent = N.aviso.titulo.replace(/^Próximamente:\s*/i, "");
     $("#aviso-texto").textContent = N.aviso.texto || "";
+    if (N.aviso.etiqueta) $("#aviso-pre").textContent = N.aviso.etiqueta;
+    if (N.aviso.boton && N.aviso.enlace) {
+      $("#aviso-link").textContent = N.aviso.boton;
+      $("#aviso-link").href = N.aviso.enlace;
+      $("#aviso-link").hidden = false;
+    }
     $("#aviso-temporada").hidden = false;
   }
 

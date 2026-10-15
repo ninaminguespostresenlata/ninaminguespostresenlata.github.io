@@ -810,3 +810,5 @@ button, input, textarea { font: inherit; color: inherit; }
 .cremas { margin: 6px 0 0; font-size: .82rem; color: var(--cafe-texto, #4A3A2A); line-height: 1.4; }
 .cremas b { color: var(--cafe, #261B03); font-weight: 600; }
 .selector__opciones button small { font-size: .82rem; font-weight: 400; opacity: .8; }
+.aviso-temporada__link { display: inline-block; margin-top: 12px; padding: 9px 22px; border-radius: 999px; background: var(--rosa); color: var(--cafe); font-weight: 600; font-size: .92rem; text-decoration: none; border: 2px solid var(--dorado-claro); }
+.aviso-temporada__link:focus-visible { outline: 3px solid var(--dorado-claro); outline-offset: 2px; }

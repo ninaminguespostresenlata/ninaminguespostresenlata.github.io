@@ -83,7 +83,7 @@ Están en `datos.js`, en `preguntas`. Para agregar o cambiar una, edita o copia 
 
 ## 7. Aviso de temporada y contador de visitas
 
-- **Aviso:** en `datos.js`, `aviso: { titulo, texto }`. Para ocultarlo, deja `titulo: ""`.
+- **Aviso:** en `datos.js`, `aviso: { etiqueta, titulo, texto, boton, enlace }`. `etiqueta` es el texto chiquito de arriba ("Muy pronto" o "Ya disponible"); `boton` y `enlace` agregan un botón (ej. "Pedir ahora" → "#temporada"). Para ocultarlo, deja `titulo: ""`.
 - **Contador de visitas (GoatCounter):** crea una cuenta gratis en goatcounter.com con el código `ninamingues` y escríbelo en `goatcounter: "ninamingues"`. Las visitas se ven en https://ninamingues.goatcounter.com. Cada pedido enviado por WhatsApp se cuenta como el evento "pedido-enviado".
 - **Google Analytics:** ya está instalado (ID G-4MEQ9CV8V8). Cada pedido enviado se registra como el evento `pedido_enviado`, con el total y el número de latas.
 
@@ -99,3 +99,4 @@ Están en `datos.js`, en `preguntas`. Para agregar o cambiar una, edita o copia 
 - Para quitar la opción en un sabor, borra su línea `cremas: true,`.
 - El mínimo de 4 latas aplica por crema (4 con chantilly, 4 con betún).
 - En Revelación y Baby Shower el cliente elige primero el color y después la crema.
+- **Sabores de temporada:** están en la categoría "Temporada" al inicio de `CATEGORIAS` en `datos.js`. Para quitarlos al terminar la temporada, borra el producto (o marca `agotado: true`).

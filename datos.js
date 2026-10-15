@@ -46,9 +46,14 @@ window.NEGOCIO = {
   moneda: "$",
 
   // Aviso destacado arriba del menú. Para ocultarlo, deja titulo: "".
+  // etiqueta (opcional): texto chiquito de arriba, ej. "Muy pronto" o "Ya disponible".
+  // boton y enlace (opcionales): botón dentro del aviso, ej. enlace "#temporada".
   aviso: {
-    titulo: "Postres navideños",
-    texto: "Chocolate Abuelita, Red Velvet, Rompope & Canela y más sabores de temporada llegan en diciembre 🎄",
+    etiqueta: "Ya disponible",
+    titulo: "Chocolate Abuelita",
+    texto: "🍫 Nuestro sabor de temporada para Día de Muertos ya está disponible. Rompope & Canela y más sabores navideños llegan en diciembre 🎄",
+    boton: "Pedir ahora",
+    enlace: "#temporada",
   },
 
   // Contador de visitas (GoatCounter, gratis). Pon aquí el código de tu cuenta,
@@ -230,6 +235,18 @@ window.NEGOCIO = {
 };
 
 window.CATEGORIAS = [
+  {
+    nombre: "Temporada",
+    productos: [
+      {
+        id: "chocolate-abuelita",
+        nombre: "Chocolate Abuelita",
+        descripcion: "Bizcocho de Doble Chocolate con Ganache de Chocolate Abuelita.",
+        precio: 85, precioEvento: 80, peso: 201,
+        etiqueta: "Temporada",
+      },
+    ],
+  },
   {
     nombre: "Bizcochos",
     productos: [
