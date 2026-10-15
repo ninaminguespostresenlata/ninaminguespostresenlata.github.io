@@ -18,6 +18,7 @@
  *                  (si no hay foto, borra la línea y se muestra el logo)
  *    etiqueta    → "Más vendido" o "Nuevo" (opcional)
  *    peso        → peso aproximado en gramos con envase (opcional)
+ *    volumen     → mililitros de las bebidas, ej. 250 (opcional)
  *    opciones    → lista de opciones a elegir, ej. ["Azul", "Rosa"] (opcional)
  *    fotosOpcion → una foto por opción, ej. { Azul: "img/...", Rosa: "img/..." }
  *                  (opcional; la tarjeta muestra las fotos lado a lado)
@@ -384,7 +385,7 @@ window.CATEGORIAS = [
         id: "latte-sin-azucar",
         nombre: "Latte Helado Sin Azúcar Añadida",
         descripcion: "Café con leche bien frío, sin azúcar añadida.",
-        precio: 55, precioEvento: 50,
+        precio: 55, precioEvento: 50, volumen: 250,
         foto: "img/productos/latte-sin-azucar.jpg",
         etiqueta: "Más vendido",
       },
@@ -392,21 +393,21 @@ window.CATEGORIAS = [
         id: "latte-moca",
         nombre: "Latte Moca Helado",
         descripcion: "Café con leche y chocolate, helado.",
-        precio: 59, precioEvento: 54,
+        precio: 59, precioEvento: 54, volumen: 250,
         foto: "img/productos/latte-moca.jpg",
       },
       {
         id: "te-negro",
         nombre: "Té Negro con Limón Helado",
         descripcion: "Té negro frío con un toque de limón.",
-        precio: 45, precioEvento: 40,
+        precio: 45, precioEvento: 40, volumen: 250,
         foto: "img/productos/te-negro-limon.jpg",
       },
       {
         id: "te-verde",
         nombre: "Té Verde con Limón Helado",
         descripcion: "Té verde frío con un toque de limón.",
-        precio: 45, precioEvento: 40,
+        precio: 45, precioEvento: 40, volumen: 250,
         foto: "img/productos/te-verde-limon.jpg",
       },
     ],

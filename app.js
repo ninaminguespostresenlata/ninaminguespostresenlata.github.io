@@ -273,6 +273,7 @@
             <span class="precio">${dinero(p.precio)}${p.latas === 1 ? " <small>c/u</small>" : ""}</span>
             ${p.precioEvento ? `<span class="precio-evento">${dinero(p.precioEvento)} en pedidos de ${N.latasParaEvento}+</span>` : ""}
             ${p.peso ? `<span class="peso">Aprox. ${p.peso} g con envase</span>` : ""}
+            ${p.volumen ? `<span class="peso">${p.volumen} ml</span>` : ""}
           </div>
           <div class="control"></div>
         </div>
