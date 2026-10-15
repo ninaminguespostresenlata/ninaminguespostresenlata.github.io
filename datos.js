@@ -257,6 +257,7 @@ window.CATEGORIAS = [
         nombre: "Chocolate & Bombón (Estilo Pastelito)",
         descripcion: "Bizcocho de Doble Chocolate relleno de suave crema de bombón. Inspirado en ese pastelito de chocolate con crema blanca que comíamos de niños.",
         precio: 85, precioEvento: 80,
+        foto: "img/productos/chocolate-bombon.jpg",
         etiqueta: "Nuevo",
       },
       {
