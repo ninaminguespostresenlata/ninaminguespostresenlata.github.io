@@ -262,7 +262,7 @@ window.CATEGORIAS = [
         id: "ferrero-nutella",
         nombre: "Ferrero & Nutella",
         descripcion: "Bizcocho de Chocolate (Tipo Brownie), Chantilly de Chocolate con Nutella, relleno de Nutella y trozos de Ferrero.",
-        precio: 90, precioEvento: 85,
+        precio: 90, precioEvento: 85, peso: 210,
         cremas: true,
         alergenos: ["Contiene avellana"],
         foto: "img/productos/ferrero-nutella.jpg",
