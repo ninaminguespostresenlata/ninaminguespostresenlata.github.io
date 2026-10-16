@@ -61,6 +61,48 @@ window.NEGOCIO = {
   // por ejemplo "ninamingues" si tu panel es https://ninamingues.goatcounter.com
   goatcounter: "",
 
+  // Test "¿No sabes qué pedir?". Cada opción lleva a otra pregunta o a un
+  // resultado (el id de un producto). Si el producto está agotado o
+  // próximamente, se recomienda el más vendido.
+  test: {
+    pregunta: "¿Qué se te antoja hoy?",
+    opciones: [
+      {
+        texto: "🍫 Chocolate",
+        pregunta: "¿Cómo te gusta el chocolate?",
+        opciones: [
+          { texto: "Intenso, muy chocolatoso", resultado: "doble-chocolate" },
+          { texto: "Con su canelita, como el de la abuela", resultado: "chocolate-abuelita" },
+          { texto: "Con crema blanca, como el pastelito de niños", resultado: "chocolate-bombon" },
+          { texto: "Con Nutella", resultado: "chocolate-nutella" },
+          { texto: "Con galleta Oreo", resultado: "chocolate-oreo" },
+          { texto: "Clásico, con dulce de leche", resultado: "chocolate-tradicional" },
+        ],
+      },
+      {
+        texto: "🍰 Algo clásico y dulcecito",
+        pregunta: "¿Cuál va más contigo?",
+        opciones: [
+          { texto: "Vainilla con dulce de leche", resultado: "vainilla-dulce" },
+          { texto: "Algo divertido y de colores", resultado: "cake-party" },
+          { texto: "Con un toque de café", resultado: "espresso-dulce" },
+        ],
+      },
+      {
+        texto: "🍋 Algo cremoso o fresco",
+        pregunta: "¿Qué prefieres?",
+        opciones: [
+          { texto: "Pay de queso cremoso", resultado: "pay-nina" },
+          { texto: "Pay de queso con dulce de leche", resultado: "pay-nina-dulce" },
+          { texto: "Fresco, con limón", resultado: "carlota-limon" },
+          { texto: "Con café", resultado: "carlota-cafe" },
+        ],
+      },
+      { texto: "🤷 ¡No me decido!", resultado: "chocolate-tradicional" },
+    ],
+    porDefecto: "chocolate-tradicional",
+  },
+
   // Opciones de crema para los productos con cremas: true.
   // extra = pesos que se suman por lata (en precio normal y de evento).
   cremas: [

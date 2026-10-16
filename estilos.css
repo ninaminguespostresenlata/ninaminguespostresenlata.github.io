@@ -812,3 +812,36 @@ button, input, textarea { font: inherit; color: inherit; }
 .selector__opciones button small { font-size: .82rem; font-weight: 400; opacity: .8; }
 .aviso-temporada__link { display: inline-block; margin-top: 12px; padding: 9px 22px; border-radius: 999px; background: var(--rosa); color: var(--cafe); font-weight: 600; font-size: .92rem; text-decoration: none; border: 2px solid var(--dorado-claro); }
 .aviso-temporada__link:focus-visible { outline: 3px solid var(--dorado-claro); outline-offset: 2px; }
+
+/* Test "¿No sabes qué pedir?" */
+.test-entrada { display: flex; justify-content: center; padding: 14px 16px 4px; }
+.btn-test {
+  font: 500 .95rem var(--sans, Poppins, sans-serif);
+  background: var(--blanco, #fff);
+  color: var(--cafe, #261B03);
+  border: 2px dashed var(--rosa-medio, #EBC3CD);
+  border-radius: 999px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.btn-test b { color: var(--dorado, #7A6200); }
+.btn-test:hover { background: var(--rosa-claro, #FCF0F3); }
+.btn-test:focus-visible { outline: 3px solid var(--dorado-claro, #B89B3C); outline-offset: 2px; }
+.test { padding: 22px 20px 20px; text-align: center; gap: 10px; }
+.panel--centro .panel__caja.test { max-width: 400px; max-height: 92dvh; overflow-y: auto; }
+.test__cerrar { position: absolute; top: 10px; right: 12px; background: none; border: 0; font-size: 1.1rem; cursor: pointer; color: var(--cafe-texto, #4A3A2A); padding: 6px; }
+.test__pre { margin: 0; font-size: .78rem; letter-spacing: 3px; text-transform: uppercase; color: var(--dorado, #7A6200); font-weight: 600; }
+.test__titulo { margin: 2px 0 6px; font-size: 1.25rem; color: var(--cafe, #261B03); line-height: 1.3; }
+.test__opciones { display: grid; gap: 10px; }
+.test__opciones button {
+  padding: 13px 14px; border-radius: 14px; border: 1px solid var(--rosa-medio, #EBC3CD);
+  background: var(--blanco, #fff); font: 600 .95rem var(--sans, Poppins, sans-serif); color: var(--cafe, #261B03);
+  cursor: pointer; text-align: left;
+}
+.test__opciones button:hover { background: var(--rosa, #F8E1E7); }
+.test__resultado img { width: 100%; max-height: 300px; object-fit: cover; border-radius: 16px; }
+.test__resultado h3 { margin: 12px 0 4px; font-size: 1.3rem; }
+.test__resultado p { margin: 0 0 8px; font-size: .9rem; line-height: 1.45; color: var(--cafe-texto, #4A3A2A); }
+.test__precio { font-weight: 700; color: var(--cafe, #261B03) !important; font-size: 1.1rem !important; }
+.test__precio small { font-weight: 400; font-size: .8rem; color: var(--cafe-texto, #4A3A2A); }
+.test .btn { width: 100%; margin-top: 6px; }

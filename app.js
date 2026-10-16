@@ -328,6 +328,52 @@
   }, { rootMargin: "-40% 0px -55% 0px" });
   document.querySelectorAll(".seccion, #eventos").forEach(s => obs.observe(s));
 
+  // ---------- Test "¿No sabes qué pedir?" ----------
+  function pintarTest(nodo) {
+    const cuerpo = $("#test-cuerpo");
+    if (nodo.resultado) {
+      let p = productos[nodo.resultado];
+      if (!p || p.agotado || p.proximamente) p = productos[N.test.porDefecto];
+      $("#test-titulo").textContent = "¡Tu lata ideal es…!";
+      cuerpo.innerHTML = `
+        <div class="test__resultado">
+          ${p.foto ? `<img src="${esc(p.foto)}" alt="${esc(p.nombre)}">` : ""}
+          <h3>${esc(p.nombre)}</h3>
+          <p>${esc(p.descripcion)}</p>
+          <p class="test__precio">${dinero(p.precio)} <small>c/u · mínimo ${p.minimo} latas</small></p>
+        </div>
+        <button class="btn btn--opinion" type="button" data-test-agregar="${p.id}">Agregar al pedido</button>
+        <button class="btn btn--sec" type="button" data-test-reiniciar>Hacer el test otra vez</button>`;
+      contar("test-resultado", { producto: p.id });
+      return;
+    }
+    $("#test-titulo").textContent = nodo.pregunta;
+    cuerpo.innerHTML = `<div class="test__opciones">${nodo.opciones.map((o, i) =>
+      `<button type="button" data-test-op="${i}">${esc(o.texto)}</button>`).join("")}</div>`;
+    cuerpo.onclick = e => {
+      const b = e.target.closest("[data-test-op]");
+      if (b) { pintarTest(nodo.opciones[+b.dataset.testOp]); return; }
+      const ag = e.target.closest("[data-test-agregar]");
+      if (ag) {
+        const p = productos[ag.dataset.testAgregar];
+        cerrar($("#test"));
+        if (p.opciones) abrirSelector(p); else cambiar(p.id, +1);
+        return;
+      }
+      if (e.target.closest("[data-test-reiniciar]")) pintarTest(N.test);
+    };
+  }
+  function abrirTest() {
+    pintarTest(N.test);
+    abrir($("#test"));
+  }
+  if (N.test) {
+    $("#btn-test").addEventListener("click", abrirTest);
+    if (location.hash === "#test") setTimeout(abrirTest, 300);
+  } else {
+    $(".test-entrada").hidden = true;
+  }
+
   // ---------- Selector de opciones ----------
   // Productos con color y crema (Revelación, Baby Shower): primero el color, luego la crema
   function abrirSelector(p, base) {

@@ -35,7 +35,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Rochester&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="estilos.css?v=35">
+  <link rel="stylesheet" href="estilos.css?v=36">
 </head>
 <body>
   <header class="hero">
@@ -65,6 +65,8 @@
     <p class="aviso-temporada__texto" id="aviso-texto"></p>
     <a class="aviso-temporada__link" id="aviso-link" hidden></a>
   </aside>
+
+  <div class="test-entrada"><button class="btn-test" type="button" id="btn-test">✨ ¿No sabes qué pedir? <b>Haz el test</b></button></div>
 
   <nav class="categorias" id="categorias" aria-label="Categorías"></nav>
 
@@ -220,6 +222,17 @@
     </section>
   </div>
 
+  <!-- Test "¿No sabes qué pedir?" -->
+  <div class="panel panel--centro" id="test" hidden>
+    <div class="panel__fondo" data-cerrar></div>
+    <section class="panel__caja test" role="dialog" aria-modal="true" aria-labelledby="test-titulo">
+      <button class="test__cerrar" type="button" data-cerrar aria-label="Cerrar">✕</button>
+      <p class="test__pre">Test de antojos</p>
+      <h2 id="test-titulo" class="test__titulo"></h2>
+      <div id="test-cuerpo" class="test__cuerpo"></div>
+    </section>
+  </div>
+
   <!-- Ventana para dejar una opinión (llega por WhatsApp antes de publicarse) -->
   <div class="panel panel--centro" id="opinion" hidden>
     <div class="panel__fondo" data-cerrar></div>
@@ -264,7 +277,7 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="datos.js?v=35"></script>
-  <script src="app.js?v=35"></script>
+  <script src="datos.js?v=36"></script>
+  <script src="app.js?v=36"></script>
 </body>
 </html>
