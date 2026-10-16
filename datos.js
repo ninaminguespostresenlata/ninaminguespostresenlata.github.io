@@ -446,6 +446,16 @@ window.CATEGORIAS = [
         minimo: 1, latas: 4,
       },
       {
+        id: "caja-cafe-postre",
+        nombre: "Caja Café & Postre",
+        descripcion: "Caja de regalo con 2 latas de postre del mismo sabor y 2 Lattes Helados Sin Azúcar Añadida. Postre: Vainilla, Chocolate o Espresso, todos con Dulce de Leche.",
+        precio: 290,
+        foto: "img/productos/caja-regalo-mano.jpg",
+        opciones: ["Vainilla & Dulce de Leche", "Chocolate & Dulce de Leche", "Espresso & Dulce de Leche"],
+        minimo: 1, latas: 4,
+        etiqueta: "Nuevo",
+      },
+      {
         id: "revelacion",
         nombre: "Revelación de Género",
         descripcion: "Bizcocho de Vainilla con Relleno Sorpresa.",
