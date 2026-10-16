@@ -450,7 +450,7 @@ window.CATEGORIAS = [
         nombre: "Caja para Dos",
         descripcion: "Caja de regalo con 2 latas de postre del mismo sabor y 2 Lattes Helados Sin Azúcar Añadida. Postre: Vainilla, Chocolate o Espresso, todos con Dulce de Leche.",
         precio: 290,
-        foto: "img/productos/caja-para-dos.jpg",
+        foto: "img/productos/caja-para-dos.jpg?v=2",
         opciones: ["Vainilla & Dulce de Leche", "Chocolate & Dulce de Leche", "Espresso & Dulce de Leche"],
         minimo: 1, latas: 4,
         etiqueta: "Nuevo",
