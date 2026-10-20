@@ -228,6 +228,7 @@ window.NEGOCIO = {
     {
       texto: "Sí lo probamos, muy rico. La verdad, sí nos gustó.",
       nombre: "Yani",
+      producto: "Ferrero & Nutella",
     },
     {
       texto: "Súper ricos, a los niños les encantaron. La verdad es una muy buena idea para fiestas en las escuelitas. A las maestras les encantó el concepto, ya que no se hace cochinero con los pastelitos.",
