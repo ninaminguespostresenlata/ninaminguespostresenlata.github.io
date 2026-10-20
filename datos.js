@@ -162,7 +162,7 @@ window.NEGOCIO = {
     "Fecha del evento:",
     "Número de latas:",
     "Sabor de latas:",
-    "¿Le gustaría sticker o diseño personalizado?:",
+    "¿Le gustaría sticker o diseño personalizado? (costo extra de $10 por lata):",
     "Lugar de entrega:",
     "¿Montaje en mesa de postres o en hielera? (la hielera es renta con costo extra):",
   ],
