@@ -100,12 +100,21 @@
   $("#notas").innerHTML = N.notas.map(t => `<li>${esc(t)}</li>`).join("");
   $("#horario").innerHTML = N.horarioTexto.map(t => `<li>${esc(t)}</li>`).join("");
   $("#tipo-evento").insertAdjacentHTML("beforeend", N.tiposDeEvento.map(t => `<option>${esc(t)}</option>`).join(""));
-  $("#eventos-tipos").innerHTML = N.tiposDeEvento.filter(t => t !== "Otro").map(t => `<li>${esc(t)}</li>`).join("");
+  // Cada tipo de evento abre WhatsApp con "Tipo de evento:" ya lleno
+  const linkCotizar = (tipo) => `https://wa.me/${N.whatsapp}?text=${encodeURIComponent(
+    `¡Hola ${N.nombre}! Quiero cotizar latas para un evento 🎉\n\n` +
+    N.cotizacionEvento.map((l, i) => (i === 0 && tipo ? `${l} ${tipo}` : l)).join("\n"))}`;
+  $("#eventos-tipos").innerHTML = N.tiposDeEvento.filter(t => t !== "Otro").map(t =>
+    `<li><a href="${linkCotizar(t)}" target="_blank" rel="noopener" data-tipo="${esc(t)}">${esc(t)}</a></li>`).join("");
+  $("#eventos-tipos").addEventListener("click", (e) => {
+    const a = e.target.closest("a[data-tipo]");
+    if (a) contar("cotizar-evento", { tipo: a.dataset.tipo });
+  });
   $("#eventos-min").textContent = N.latasParaEvento;
   $("#eventos-sabor").textContent = N.minimoPorSaborEvento;
   $("#eventos-dias").textContent = N.diasAnticipacionEvento;
-  $("#link-evento").href = `https://wa.me/${N.whatsapp}?text=${encodeURIComponent(
-    `¡Hola ${N.nombre}! Quiero cotizar latas para un evento 🎉\n\n` + N.cotizacionEvento.join("\n"))}`;
+  $("#link-evento").href = linkCotizar("");
+  $("#link-evento").addEventListener("click", () => contar("cotizar-evento", { tipo: "general" }));
 
   // Galería de eventos con visor
   $("#galeria").innerHTML = N.galeriaEventos.map((g, i) =>

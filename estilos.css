@@ -600,11 +600,15 @@ button, input, textarea { font: inherit; color: inherit; }
 .eventos h2 { color: var(--rosa); font-size: clamp(2rem, 7vw, 2.6rem); margin: 4px 0 10px; }
 .eventos p { line-height: 1.5; }
 .eventos__tipos { list-style: none; padding: 0; margin: 16px 0; display: flex; flex-wrap: wrap; gap: 8px; }
-.eventos__tipos li {
-  padding: 5px 12px; border-radius: 999px;
+.eventos__tipos-ayuda { margin: 16px 0 -6px; font-size: .85rem; color: var(--dorado-claro); }
+.eventos__tipos a {
+  display: inline-block; padding: 6px 13px; border-radius: 999px;
   border: 1px solid rgba(201, 164, 76, .6);
-  color: var(--rosa); font-size: .85rem;
+  color: var(--rosa); font-size: .85rem; text-decoration: none;
+  transition: background .15s, color .15s, transform .15s;
 }
+.eventos__tipos a:hover, .eventos__tipos a:focus-visible { background: var(--rosa); color: #2a1d0c; transform: translateY(-1px); }
+.eventos__tipos a:active { transform: scale(.97); }
 .eventos__beneficios { padding-left: 20px; margin: 0 0 22px; display: grid; gap: 6px; font-size: .95rem; }
 .eventos__beneficios strong { color: #fff; }
 .eventos__beneficios li::marker { color: var(--dorado-claro); }
