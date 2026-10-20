@@ -104,8 +104,8 @@
   const linkCotizar = (tipo) => `https://wa.me/${N.whatsapp}?text=${encodeURIComponent(
     `¡Hola ${N.nombre}! Quiero cotizar latas para un evento 🎉\n\n` +
     N.cotizacionEvento.map((l, i) => (i === 0 && tipo ? `${l} ${tipo}` : l)).join("\n"))}`;
-  $("#eventos-tipos").innerHTML = N.tiposDeEvento.filter(t => t !== "Otro").map(t =>
-    `<li><a href="${linkCotizar(t)}" target="_blank" rel="noopener" data-tipo="${esc(t)}">${esc(t)}</a></li>`).join("");
+  $("#eventos-tipos").innerHTML = N.tiposDeEvento.map(t =>
+    `<li><a href="${linkCotizar(t === "Otro" ? "Otro (¿cuál?): " : t)}" target="_blank" rel="noopener" data-tipo="${esc(t)}">${esc(t)}</a></li>`).join("");
   $("#eventos-tipos").addEventListener("click", (e) => {
     const a = e.target.closest("a[data-tipo]");
     if (a) contar("cotizar-evento", { tipo: a.dataset.tipo });
