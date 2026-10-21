@@ -851,6 +851,6 @@ button, input, textarea { font: inherit; color: inherit; }
 .test .btn { width: 100%; margin-top: 6px; }
 
 /* Botón directo a Eventos (junto a redes) */
-.btn--eventos { background: var(--cafe); color: #D9B95E; border: 1px solid #C9A44C; }
-.btn--eventos svg { fill: #D9B95E; }
+.btn--eventos { background: var(--cafe); color: var(--rosa); border: 1px solid var(--rosa); }
+.btn--eventos svg { fill: var(--rosa); }
 .btn--eventos:hover { background: #3d2a12; }
