@@ -114,6 +114,7 @@
   $("#eventos-sabor").textContent = N.minimoPorSaborEvento;
   $("#eventos-dias").textContent = N.diasAnticipacionEvento;
   $("#link-evento").href = linkCotizar("");
+  $("#btn-eventos").addEventListener("click", () => contar("boton-eventos"));
   $("#link-evento").addEventListener("click", () => contar("cotizar-evento", { tipo: "general" }));
 
   // Galería de eventos con visor
