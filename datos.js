@@ -52,7 +52,7 @@ window.NEGOCIO = {
   aviso: {
     etiqueta: "Ya disponible",
     titulo: "Chocolate Abuelita",
-    texto: "🍫 Nuestro sabor de temporada para Día de Muertos ya está disponible. Y en el menú navideño ya puedes pedir Chocolate & Bombón; Rompope & Canela y Red Velvet llegan muy pronto 🎄",
+    texto: "🍫 Nuestro sabor de temporada para Día de Muertos ya está disponible. Y en el menú navideño ya puedes pedir nuestras Pingüi-latas; Rompope & Canela y Red Velvet llegan muy pronto 🎄",
     boton: "Pedir ahora",
     enlace: "#temporada",
   },
@@ -301,7 +301,7 @@ window.CATEGORIAS = [
     productos: [
       {
         id: "chocolate-bombon",
-        nombre: "Chocolate & Bombón (Estilo Pastelito)",
+        nombre: "Pingüi-latas",
         descripcion: "Bizcocho de Doble Chocolate relleno de suave crema de bombón. Inspirado en ese pastelito de chocolate con crema blanca que comíamos de niños.",
         precio: 85, precioEvento: 80,
         foto: "img/productos/chocolate-bombon.jpg?v=2",
