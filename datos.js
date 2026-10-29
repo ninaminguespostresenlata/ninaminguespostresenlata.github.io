@@ -326,6 +326,15 @@ window.CATEGORIAS = [
         etiqueta: "Próximamente",
         proximamente: true,
       },
+      {
+        id: "besos-nuez-canela",
+        nombre: "Galletas de Nuez & Canela",
+        descripcion: "Besitos de nuez con un toque de canela, revolcados en azúcar glass. Se deshacen en la boca. No necesitan refrigeración: ideales para regalar.",
+        precio: 80, precioEvento: 75, peso: 100,
+        alergenos: ["Contiene nuez"],
+        foto: "img/productos/besos-nuez-canela.jpg",
+        etiqueta: "Nuevo",
+      },
     ],
   },
   {
