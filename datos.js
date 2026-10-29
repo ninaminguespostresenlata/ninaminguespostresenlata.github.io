@@ -329,8 +329,9 @@ window.CATEGORIAS = [
       {
         id: "galletas-canela-azucar",
         nombre: "Galletas de Canela & Azúcar",
-        descripcion: "Galletas suavecitas revolcadas en azúcar con canela. Saben a Navidad. No necesitan refrigeración: ideales para regalar.",
+        descripcion: "Las típicas galletitas crujientes de canela y azúcar, perfectas para esta temporada navideña. No necesitan refrigeración: ideales para regalar.",
         precio: 60, precioEvento: 55, peso: 100,
+        alergenos: ["Puede contener nuez"],
         foto: "img/productos/galletas-canela-azucar.jpg",
         etiqueta: "Nuevo",
       },
