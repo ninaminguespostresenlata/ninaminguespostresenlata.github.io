@@ -51,10 +51,10 @@ window.NEGOCIO = {
   // boton y enlace (opcionales): botón dentro del aviso, ej. enlace "#temporada".
   aviso: {
     etiqueta: "Ya disponible",
-    titulo: "Chocolate Abuelita",
-    texto: "🍫 Nuestro sabor de temporada para Día de Muertos ya está disponible. Y en el menú navideño ya puedes pedir nuestras Pingüi-latas; Rompope & Canela y Red Velvet llegan muy pronto 🎄",
-    boton: "Pedir ahora",
-    enlace: "#temporada",
+    titulo: "Menú Navideño 🎄",
+    texto: "Llegó la Navidad en lata: Pingüi-latas, Rompope & Canela, Red Velvet y Galletas de Canela & Azúcar. Perfectos para regalar, posadas e intercambios. ¡Aparta tu pedido! 🎁",
+    boton: "Ver menú navideño",
+    enlace: "#navidad",
   },
 
   // Contador de visitas (GoatCounter, gratis). Pon aquí el código de tu cuenta,
@@ -284,19 +284,6 @@ window.NEGOCIO = {
 
 window.CATEGORIAS = [
   {
-    nombre: "Temporada",
-    productos: [
-      {
-        id: "chocolate-abuelita",
-        nombre: "Chocolate Abuelita",
-        descripcion: "Bizcocho de Doble Chocolate con Ganache de Chocolate Abuelita.",
-        precio: 85, precioEvento: 80, peso: 215,
-        foto: "img/productos/chocolate-abuelita.jpg?v=2",
-        etiqueta: "Temporada",
-      },
-    ],
-  },
-  {
     nombre: "Navidad",
     productos: [
       {
@@ -314,8 +301,7 @@ window.CATEGORIAS = [
         precio: 85, precioEvento: 80,
         alergenos: ["Contiene alcohol"],
         foto: "img/productos/rompope-canela.jpg",
-        etiqueta: "Próximamente",
-        proximamente: true,
+        etiqueta: "Nuevo",
       },
       {
         id: "red-velvet",
@@ -323,8 +309,7 @@ window.CATEGORIAS = [
         descripcion: "Bizcocho Red Velvet con Betún de Queso Crema.",
         precio: 85, precioEvento: 80,
         foto: "img/productos/red-velvet.jpg",
-        etiqueta: "Próximamente",
-        proximamente: true,
+        etiqueta: "Nuevo",
       },
       {
         id: "galletas-canela-azucar",
@@ -334,6 +319,19 @@ window.CATEGORIAS = [
         alergenos: ["Puede contener nuez"],
         foto: "img/productos/galletas-canela-azucar.jpg",
         etiqueta: "Nuevo",
+      },
+    ],
+  },
+  {
+    nombre: "Temporada",
+    productos: [
+      {
+        id: "chocolate-abuelita",
+        nombre: "Chocolate Abuelita",
+        descripcion: "Bizcocho de Doble Chocolate con Ganache de Chocolate Abuelita.",
+        precio: 85, precioEvento: 80, peso: 215,
+        foto: "img/productos/chocolate-abuelita.jpg?v=2",
+        etiqueta: "Temporada",
       },
     ],
   },
