@@ -441,7 +441,7 @@ window.CATEGORIAS = [
         nombre: "Carlota de Limón",
         descripcion: "Capas de Galleta María, Crema Suave de Limón & Limón Rallado.",
         precio: 90, precioEvento: 85, peso: 235,
-        foto: "img/productos/carlota-limon.jpg",
+        foto: "img/productos/carlota-limon.jpg?v=2",
       },
     ],
   },
