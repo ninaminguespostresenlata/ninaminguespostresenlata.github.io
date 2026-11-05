@@ -425,7 +425,7 @@ window.CATEGORIAS = [
         id: "pay-nina-dulce",
         nombre: "Pay Nina & Dulce",
         descripcion: "Tradicional Pay de Queso, Chantilly de Vainilla, relleno de Dulce de Leche.",
-        precio: 95, precioEvento: 90, peso: 223,
+        precio: 95, precioEvento: 90, peso: 230,
         foto: "img/productos/pay-nina-dulce.jpg",
         etiqueta: "Más vendido",
       },
