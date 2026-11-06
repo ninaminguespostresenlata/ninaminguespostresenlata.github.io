@@ -256,7 +256,7 @@
   // ---------- Menú ----------
   const nav = $("#categorias");
   const menu = $("#menu");
-  const logoSinFoto = `<div class="tarjeta__sinfoto"><img src="img/logo.png" alt="" loading="lazy"></div>`;
+  const logoSinFoto = `<div class="tarjeta__sinfoto"><img src="img/logo.png?v=2" alt="" loading="lazy"></div>`;
 
   nav.innerHTML = CATS.map(c => `<a href="#${slug(c.nombre)}">${esc(c.nombre)}</a>`).join("") +
     `<a href="#eventos">Eventos ✨</a>` +
