@@ -127,6 +127,12 @@ window.NEGOCIO = {
     "Revelación de género", "Primera comunión", "Graduación", "Evento de empresa", "Otro",
   ],
 
+  // Fechas sin entregas (formato año-mes-día). El calendario no deja pedir en esos días.
+  // Cuando pasen, se pueden borrar. Para agregar otras, copia una línea.
+  fechasBloqueadas: [
+    { desde: "2026-11-09", hasta: "2026-11-18", motivo: "Agenda llena" },
+  ],
+
   // Horario (0 = domingo, 1 = lunes ... 6 = sábado). null = cerrado.
   zonaHoraria: "America/Mexico_City",
   horario: {

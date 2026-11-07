@@ -480,7 +480,11 @@
   function hoyISO() {
     try { return ahoraLocal().fecha; } catch (e) { return new Date().toISOString().slice(0, 10); }
   }
+  function bloqueo(iso) {
+    return (N.fechasBloqueadas || []).find(b => iso >= b.desde && iso <= b.hasta) || null;
+  }
   function diaDisponible(iso, evento) {
+    if (bloqueo(iso)) return false;
     const dia = new Date(iso + "T12:00:00Z").getUTCDay();
     return !!N.horario[dia] || (evento && dia === 0 && N.domingoSoloEventos);
   }
@@ -493,7 +497,18 @@
     const min = fechaMinima(evento);
     form.fecha.min = min;
     const domingo = evento && N.domingoSoloEventos ? "Eventos: también entregamos en domingo" : "Domingo no hay entregas (solo eventos de 15+ latas)";
-    $("#fecha-ayuda").textContent = `Con ${evento ? N.diasAnticipacionEvento : N.diasAnticipacion} días de anticipación · ${domingo} · Primera fecha disponible: ${fechaBonita(min)}`;
+    const hoy = hoyISO();
+    const avisos = (N.fechasBloqueadas || []).filter(b => b.hasta >= hoy)
+      .map(rango);
+    $("#fecha-ayuda").textContent = `Con ${evento ? N.diasAnticipacionEvento : N.diasAnticipacion} días de anticipación · ${domingo}${avisos.length ? " · " + avisos.join(" · ") : ""} · Primera fecha disponible: ${fechaBonita(min)}`;
+  }
+  function fechaCorta(iso) {
+    return new Date(iso + "T12:00:00Z").toLocaleDateString("es-MX", { day: "numeric", month: "long", timeZone: "UTC" });
+  }
+  function rango(b) {
+    const mismoMes = b.desde.slice(0, 7) === b.hasta.slice(0, 7);
+    const ini = mismoMes ? String(Number(b.desde.slice(8))) : fechaCorta(b.desde);
+    return `${b.motivo || "Sin entregas"} del ${ini} al ${fechaCorta(b.hasta)}`;
   }
   function fechaBonita(iso) {
     return new Date(iso + "T12:00:00Z").toLocaleDateString("es-MX", { weekday: "long", day: "numeric", month: "long", timeZone: "UTC" });
@@ -552,6 +567,8 @@
     if (d.entrega === "Domicilio" && !(d.direccion || "").trim()) return "Escribe la dirección de entrega.";
     if (!d.fecha) return "Elige la fecha de entrega.";
     if (d.fecha < fechaMinima(r.evento)) return `La primera fecha disponible es ${fechaBonita(fechaMinima(r.evento))}.`;
+    const b = bloqueo(d.fecha);
+    if (b) return `${rango(b)}. Elige otra fecha; la primera disponible es ${fechaBonita(fechaMinima(r.evento))}.`;
     if (!diaDisponible(d.fecha, r.evento)) return `Los domingos solo entregamos eventos (${N.latasParaEvento} latas o más). Elige otro día.`;
     if (!d.pago) return "Elige la forma de pago.";
     return "";
