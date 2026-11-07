@@ -136,11 +136,11 @@ window.NEGOCIO = {
     3: ["09:00", "20:00"],
     4: ["09:00", "20:00"],
     5: ["09:00", "20:00"],
-    6: ["10:00", "19:00"],
+    6: ["10:00", "18:00"],
   },
   horarioTexto: [
     "Lunes a viernes · 9:00 am – 8:00 pm",
-    "Sábado · 10:00 am – 7:00 pm",
+    "Sábado · 10:00 am – 6:00 pm",
     "Domingo · cerrado (solo entregas de eventos)",
   ],
 
