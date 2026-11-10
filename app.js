@@ -560,6 +560,7 @@
 
   function validar(r, d) {
     if (!r.piezas) return "Agrega al menos un producto.";
+    if (!r.latas) return `Los extras se agregan a un pedido de latas. Agrega al menos ${N.minimoLatas} latas de postre o bebida.`;
     if (r.cortos.length) return `En pedidos de evento cada sabor lleva mínimo ${N.minimoPorSaborEvento} latas. Sube a ${N.minimoPorSaborEvento}: ${r.cortos.join(", ")}.`;
     if (!d.nombre || !d.nombre.trim()) return "Escribe tu nombre.";
     if ((d.celular || "").replace(/\D/g, "").length < 10) return "Escribe tu celular a 10 dígitos.";
