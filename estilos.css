@@ -854,3 +854,11 @@ button, input, textarea { font: inherit; color: inherit; }
 .btn--eventos { background: var(--cafe); color: var(--rosa); border: 1px solid var(--rosa); }
 .btn--eventos svg { fill: var(--rosa); }
 .btn--eventos:hover { background: #3d2a12; }
+
+/* Galería deslizable en tarjetas */
+.tarjeta__galeria { display: flex; height: 100%; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+.tarjeta__galeria::-webkit-scrollbar { display: none; }
+.tarjeta__galeria img { flex: 0 0 100%; width: 100%; height: 100%; object-fit: cover; scroll-snap-align: start; }
+.tarjeta__puntos { position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; pointer-events: none; }
+.tarjeta__puntos i { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,.6); box-shadow: 0 0 2px rgba(0,0,0,.35); }
+.tarjeta__puntos i.activo { background: #fff; }

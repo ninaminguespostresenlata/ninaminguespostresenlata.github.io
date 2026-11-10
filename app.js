@@ -277,6 +277,10 @@
           ${p.fotosOpcion
             ? `<div class="tarjeta__duo">${Object.entries(p.fotosOpcion).map(([o, f]) =>
                 `<figure><img src="${esc(f)}" alt="${esc(p.nombre)} ${esc(o)}" loading="lazy"><figcaption>${esc(o)}</figcaption></figure>`).join("")}</div>`
+            : (p.fotos || []).length > 1
+            ? `<div class="tarjeta__galeria">${p.fotos.map((f, i) =>
+                `<img src="${esc(f)}" alt="${esc(p.nombre)} ${i + 1}" loading="lazy">`).join("")}</div>
+               <div class="tarjeta__puntos">${p.fotos.map((_, i) => `<i${i ? "" : ' class="activo"'}></i>`).join("")}</div>`
             : p.foto ? `<img src="${esc(p.foto)}" alt="${esc(p.nombre)}" loading="lazy">` : logoSinFoto}
           ${p.etiqueta ? `<span class="etiqueta">¡${esc(p.etiqueta)}!</span>` : ""}
         </div>
@@ -587,3 +591,11 @@
 
   actualizar();
 })();
+
+// Galería de fotos en tarjetas: puntitos que siguen al deslizar
+document.addEventListener("scroll", e => {
+  const g = e.target;
+  if (!g.classList || !g.classList.contains("tarjeta__galeria")) return;
+  const i = Math.round(g.scrollLeft / g.clientWidth);
+  g.parentElement.querySelectorAll(".tarjeta__puntos i").forEach((d, k) => d.classList.toggle("activo", k === i));
+}, true);
