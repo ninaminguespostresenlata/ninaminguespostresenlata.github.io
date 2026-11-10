@@ -286,7 +286,7 @@
           ${p.cremas && N.cremas ? `<p class="cremas">Elige: ${N.cremas.map(c => `${esc(c.nombre)}${c.extra ? ` <b>+${dinero(c.extra)}</b>` : ""}`).join(" o ")}</p>` : ""}
           ${(p.alergenos || []).length ? `<p class="alergenos">${p.alergenos.map(a => `<span>${esc(a)}</span>`).join("")}</p>` : ""}
           <div class="tarjeta__precios">
-            <span class="precio">${dinero(p.precio)}${p.latas === 1 ? " <small>c/u</small>" : ""}</span>
+            <span class="precio">${dinero(p.precio)}${p.latas === 1 ? " <small>c/u</small>" : p.unidad ? ` <small>${esc(p.unidad)}</small>` : ""}</span>
             ${p.precioEvento ? `<span class="precio-evento">${dinero(p.precioEvento)} en pedidos de ${N.latasParaEvento}+</span>` : ""}
             ${p.peso ? `<span class="peso">Aprox. ${p.peso} g con envase</span>` : ""}
             ${p.volumen ? `<span class="peso">${p.volumen} ml</span>` : ""}
