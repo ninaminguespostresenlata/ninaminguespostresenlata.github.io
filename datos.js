@@ -331,7 +331,7 @@ window.CATEGORIAS = [
         nombre: "Cajita navideña (1 pieza)",
         descripcion: "Cajita kraft con ventana y moñito, para 1 sola lata. Agrega 1 cajita por cada lata que quieras regalar.",
         precio: 15, unidad: "por pieza (1 lata)",
-        foto: "img/productos/caja-navidena.jpg?v=2",
+        foto: "img/productos/caja-navidena.jpg",
         minimo: 1, latas: 0,
       },
       {
@@ -339,7 +339,7 @@ window.CATEGORIAS = [
         nombre: "Bolsita navideña (1 pieza)",
         descripcion: "Bolsita transparente con dibujos navideños y cierre dorado, para 1 sola lata. Agrega 1 bolsita por cada lata.",
         precio: 10, unidad: "por pieza (1 lata)",
-        foto: "img/productos/bolsa-navidena.jpg?v=2",
+        foto: "img/productos/bolsa-navidena.jpg",
         minimo: 1, latas: 0,
       },
       {
@@ -347,7 +347,7 @@ window.CATEGORIAS = [
         nombre: "Etiqueta navideña (1 pieza)",
         descripcion: "Etiqueta roja de \"Feliz Navidad y Próspero Año Nuevo\" para 1 sola lata. Agrega 1 etiqueta por cada lata. Si quieres que lleve un nombre, escríbelo en las notas del pedido.",
         precio: 10, unidad: "por pieza (1 lata)",
-        foto: "img/productos/etiqueta-navidena.jpg?v=2",
+        foto: "img/productos/etiqueta-navidena.jpg",
         minimo: 1, latas: 0,
       },
     ],
