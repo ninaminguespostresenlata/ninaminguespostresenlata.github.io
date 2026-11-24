@@ -92,7 +92,6 @@ window.NEGOCIO = {
         texto: "🍋 Algo cremoso o fresco",
         pregunta: "¿Qué prefieres?",
         opciones: [
-          { texto: "Pay de queso cremoso", resultado: "pay-nina" },
           { texto: "Pay de queso con dulce de leche", resultado: "pay-nina-dulce" },
           { texto: "Fresco, con limón", resultado: "carlota-limon" },
           { texto: "Con café", resultado: "carlota-cafe" },
@@ -447,13 +446,6 @@ window.CATEGORIAS = [
   {
     nombre: "Pay & Cremosos",
     productos: [
-      {
-        id: "pay-nina",
-        nombre: "Pay Nina Míngues",
-        descripcion: "Tradicional Pay de Queso & Chantilly de Vainilla.",
-        precio: 95, precioEvento: 90, peso: 190,
-        foto: "img/productos/pay-nina.jpg",
-      },
       {
         id: "pay-nina-dulce",
         nombre: "Pay Nina & Dulce",
