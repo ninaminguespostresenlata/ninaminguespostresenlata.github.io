@@ -248,7 +248,7 @@ window.NEGOCIO = {
     {
       texto: "10000/10 💎 Ya me había dicho quien me lo recomendó que estaban muuuy buenos y no se equivocó.",
       nombre: "César",
-      producto: "Pay Nina & Dulce",
+      producto: "Pay Nina Dulce",
     },
     {
       texto: "El de Ferrero, por cierto, ¡está SÚPER DELICIOSO! Me gustó mucho.",
@@ -448,7 +448,7 @@ window.CATEGORIAS = [
     productos: [
       {
         id: "pay-nina-dulce",
-        nombre: "Pay Nina & Dulce",
+        nombre: "Pay Nina Dulce",
         descripcion: "Tradicional Pay de Queso, Chantilly de Vainilla, relleno de Dulce de Leche.",
         precio: 95, precioEvento: 90, peso: 230,
         foto: "img/productos/pay-nina-dulce.jpg",
