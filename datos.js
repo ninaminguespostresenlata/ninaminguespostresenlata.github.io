@@ -524,7 +524,7 @@ window.CATEGORIAS = [
       {
         id: "latte-sin-azucar",
         nombre: "Latte Helado Sin Azúcar Añadida",
-        descripcion: "Café con leche bien frío, sin azúcar añadida.",
+        descripcion: "Doble espresso recién extraído con leche bien fría, sin azúcar añadida.",
         precio: 55, precioEvento: 50, volumen: 250,
         foto: "img/productos/latte-sin-azucar.jpg",
         etiqueta: "Más vendido",
@@ -532,7 +532,7 @@ window.CATEGORIAS = [
       {
         id: "latte-moca",
         nombre: "Latte Moca Helado",
-        descripcion: "Café con leche y chocolate, helado.",
+        descripcion: "Doble espresso recién extraído con leche bien fría y chocolate.",
         precio: 59, precioEvento: 54, volumen: 250,
         foto: "img/productos/latte-moca.jpg",
       },
