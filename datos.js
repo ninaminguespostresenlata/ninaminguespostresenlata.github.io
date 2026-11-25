@@ -532,7 +532,7 @@ window.CATEGORIAS = [
       {
         id: "latte-moca",
         nombre: "Latte Moca Helado",
-        descripcion: "Doble espresso recién extraído con leche bien fría y chocolate.",
+        descripcion: "Doble espresso recién extraído con leche bien fría y jarabe de chocolate.",
         precio: 59, precioEvento: 54, volumen: 250,
         foto: "img/productos/latte-moca.jpg",
       },
