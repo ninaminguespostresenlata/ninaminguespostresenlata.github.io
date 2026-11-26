@@ -569,9 +569,9 @@ window.CATEGORIAS = [
       {
         id: "sticker",
         nombre: "Sticker personalizado",
-        descripcion: "Uno por lata. Redondo de 5 cm: ideal para logo de empresa. Rectangular de 7 × 3 cm: ideal para nombre de persona o logo horizontal. Agrega también el Diseño personalizado (una vez por pedido).",
+        descripcion: "Uno por lata. Redondo de 5 cm: ideal para logo de empresa. Rectangular de 5 × 2 cm: ideal para nombre de persona o logo horizontal. Agrega también el Diseño personalizado (una vez por pedido).",
         precio: 5,
-        opciones: ["Redondo 5 cm", "Rectangular 7 × 3 cm"],
+        opciones: ["Redondo 5 cm", "Rectangular 5 × 2 cm"],
         unidad: "por lata",
         foto: "img/productos/sticker.jpg?v=2",
         minimo: 1, latas: 0,
