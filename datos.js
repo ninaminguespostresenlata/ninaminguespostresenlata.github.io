@@ -563,7 +563,7 @@ window.CATEGORIAS = [
         descripcion: "Diseñamos tu sticker con logo, nombre, fecha o mensaje. Se cobra una sola vez por pedido. Cuéntanos qué quieres en las notas del pedido (si es logo, mándalo por WhatsApp).",
         precio: 40,
         unidad: "por pedido",
-        foto: "img/productos/sticker.jpg",
+        foto: "img/productos/sticker.jpg?v=2",
         minimo: 1, maximo: 1, latas: 0,
       },
       {
@@ -573,7 +573,7 @@ window.CATEGORIAS = [
         precio: 5,
         opciones: ["Redondo 5 cm", "Rectangular 7 × 3 cm"],
         unidad: "por lata",
-        foto: "img/productos/sticker.jpg",
+        foto: "img/productos/sticker.jpg?v=2",
         minimo: 1, latas: 0,
       },
       {
