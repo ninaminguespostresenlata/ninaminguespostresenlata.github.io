@@ -23,6 +23,8 @@
  *    fotosOpcion → una foto por opción, ej. { Azul: "img/...", Rosa: "img/..." }
  *                  (opcional; la tarjeta muestra las fotos lado a lado)
  *    minimo      → cantidad mínima (4 latas del mismo sabor; 1 para extras)
+ *    maximo      → cantidad máxima por pedido (opcional, ej. 1 para el diseño)
+ *    unidad      → texto junto al precio, ej. "por pedido" (opcional)
  *    latas       → cuántas latas cuenta cada unidad para el descuento de
  *                  eventos (1 normalmente, 4 para la caja, 0 para extras)
  *    agotado     → pon true para ocultar temporalmente el botón de agregar
@@ -167,7 +169,7 @@ window.NEGOCIO = {
     "Fecha del evento:",
     "Número de latas:",
     "Sabor de latas:",
-    "¿Le gustaría sticker o diseño personalizado? (costo extra de $5 por lata):",
+    "¿Le gustaría sticker personalizado? (diseño $40 por pedido + $5 por sticker):",
     "Lugar de entrega:",
     "¿Montaje en mesa de postres o en hielera? (la hielera es renta con costo extra):",
   ],
@@ -556,10 +558,20 @@ window.CATEGORIAS = [
     nombre: "Extras",
     productos: [
       {
+        id: "diseno",
+        nombre: "Diseño personalizado",
+        descripcion: "Diseñamos tu sticker con logo, nombre, fecha o mensaje. Se cobra una sola vez por pedido. Cuéntanos qué quieres en las notas del pedido (si es logo, mándalo por WhatsApp).",
+        precio: 40,
+        unidad: "por pedido",
+        foto: "img/productos/sticker.jpg",
+        minimo: 1, maximo: 1, latas: 0,
+      },
+      {
         id: "sticker",
         nombre: "Sticker personalizado",
-        descripcion: "Sticker de 5 cm con tu diseño o mensaje. Cuéntanos qué quieres en las notas del pedido.",
+        descripcion: "Sticker rectangular con tu diseño, uno por lata. Agrega también el Diseño personalizado (una vez por pedido).",
         precio: 5,
+        unidad: "por lata",
         foto: "img/productos/sticker.jpg",
         minimo: 1, latas: 0,
       },

@@ -85,6 +85,10 @@
       nueva = 0;
       if (actual > 0 && p.minimo > 1) aviso(`Mínimo ${p.minimo} latas por sabor`);
     }
+    if (p.maximo && nueva > p.maximo) {
+      nueva = p.maximo;
+      aviso(`${p.nombre}: máximo ${p.maximo} por pedido`);
+    }
     if (nueva > 0) carrito[clave] = nueva; else delete carrito[clave];
     if (actual === 0 && nueva > 0) aviso(`${p.nombre} agregado${p.minimo > 1 ? ` (${p.minimo} latas)` : ""}`);
     guardar();
