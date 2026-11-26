@@ -569,7 +569,7 @@ window.CATEGORIAS = [
       {
         id: "sticker",
         nombre: "Sticker personalizado",
-        descripcion: "Sticker rectangular con tu diseño, uno por lata. Agrega también el Diseño personalizado (una vez por pedido).",
+        descripcion: "Sticker rectangular de 7 × 3 cm con tu diseño, uno por lata. Agrega también el Diseño personalizado (una vez por pedido).",
         precio: 5,
         unidad: "por lata",
         foto: "img/productos/sticker.jpg",
